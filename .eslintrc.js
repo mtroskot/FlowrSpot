@@ -17,6 +17,8 @@ module.exports = {
     'react/require-default-props': [1, { forbidDefaultForRequired: true }],
     'no-case-declarations': [1],
     'prefer-template': [1],
-    'jest/no-identical-title': [2]
+    'jest/no-identical-title': [2],
+    'no-unneeded-ternary': [2],
+    'sort-imports': [2, { ignoreDeclarationSort: true }]
   }
 };
