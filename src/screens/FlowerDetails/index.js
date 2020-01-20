@@ -4,7 +4,6 @@ import { dimensions, fonts } from 'src/styles';
 const { rem } = dimensions;
 
 const FlowerDetails = props => {
-  console.log(props);
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
       <Text style={{ ...fonts.style.normal, textAlign: 'center', fontSize: 16 * rem }}>
