@@ -19,6 +19,7 @@ module.exports = {
     'prefer-template': [1],
     'jest/no-identical-title': [2],
     'no-unneeded-ternary': [2],
-    'sort-imports': [2, { ignoreDeclarationSort: true }]
+    'sort-imports': [2, { ignoreDeclarationSort: true }],
+    'react-hooks/exhaustive-deps': [1]
   }
 };

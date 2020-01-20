@@ -15,28 +15,32 @@ const styles = StyleSheet.create({
     color: '#fff',
     textAlign: 'center',
     lineHeight: 29 * rem,
-    fontSize: 24 * rem,
-    marginTop: 20 * rem,
+    fontSize: 26 * rem,
+    marginTop: 60 * rem,
     paddingHorizontal: 64 * rem
   },
   headerSubTitle: {
     ...fonts.style.normal,
     color: '#fff',
     textAlign: 'center',
-    marginTop: 15 * rem,
+    marginTop: 25 * rem,
     opacity: 0.7,
-    fontSize: 15 * rem,
+    fontSize: 16 * rem,
     lineHeight: 17 * rem
   },
   searchBarView: {
     marginTop: 20 * rem,
-    marginBottom: 28 * rem
+    marginBottom: 78 * rem
   },
-  listItemWrapper: {
-    flex: 0.5,
-    borderRadius: 3 * rem,
-    overflow: 'hidden',
-    marginTop: 12 * rem
+  flatListContentContainer: {
+    flexGrow: 1
+  },
+  searchResultAbsolutePositionView: {
+    position: 'absolute',
+    alignSelf: 'center',
+    width: '90%',
+    height: '35%',
+    top: 225 * rem
   }
 });
 
