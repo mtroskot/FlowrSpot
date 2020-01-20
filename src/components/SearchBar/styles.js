@@ -5,7 +5,7 @@ const { rem } = dimensions;
 const styles = StyleSheet.create({
   textInputView: {
     flexDirection: 'row',
-    width: '85%',
+    width: '88%',
     height: 48 * rem,
     borderWidth: 1 * rem,
     alignItems: 'center',
@@ -26,6 +26,10 @@ const styles = StyleSheet.create({
   searchIcon: {
     width: 20 * rem,
     height: 20 * rem
+  },
+  clearIcon: {
+    width: 15 * rem,
+    height: 15 * rem
   }
 });
 

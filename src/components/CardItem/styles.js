@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { dimensions, fonts } from 'src/styles';
 const { rem } = dimensions;
-const circle = 30;
+const circle = 30 * rem;
 
 const styles = StyleSheet.create({
   imageContainer: {
@@ -11,16 +11,16 @@ const styles = StyleSheet.create({
   },
   starContainer: {
     alignSelf: 'flex-end',
-    height: circle * rem,
-    width: circle * rem,
-    borderRadius: (circle / 2) * rem,
+    height: circle,
+    width: circle,
+    borderRadius: circle / 2,
     margin: 16 * rem
   },
   starSubContainer: {
     backgroundColor: 'white',
-    height: circle * rem,
-    width: circle * rem,
-    borderRadius: (circle / 2) * rem,
+    height: circle,
+    width: circle,
+    borderRadius: circle / 2,
     justifyContent: 'center',
     alignItems: 'center'
   },

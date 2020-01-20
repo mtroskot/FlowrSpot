@@ -1,32 +1,40 @@
 import React from 'react';
-import { Image, TextInput, View, ViewPropTypes } from 'react-native';
+import { TextInput, View, ViewPropTypes } from 'react-native';
+import { IconButton } from 'src/components';
 import searchIcon from 'src/assets/icons/search/search.png';
+import clearIcon from 'src/assets/icons/clear/clear.png';
 import PropTypes from 'prop-types';
 import styles from 'src/components/SearchBar/styles';
+import StringUtils from 'src/utils/StringUtils';
 
 const SearchBar = props => {
-  const { searchInput, handleInput, placeholder, viewStyle, textInputRef } = props;
+  const { searchInput, handleInput, placeholder, viewStyle, clearInput } = props;
+  const searchInputEmpty = StringUtils.isEmpty(searchInput);
   return (
     <View style={[styles.textInputView, viewStyle]}>
       <TextInput
-        ref={textInputRef}
         style={styles.textInputStyle}
         value={searchInput}
         placeholder={placeholder}
         placeholderTextColor="#949EA0"
         onChangeText={handleInput}
       />
-      <Image style={[styles.iconStyle, styles.searchIcon]} source={searchIcon} />
+      <IconButton
+        imageStyle={[styles.iconStyle, searchInputEmpty ? styles.searchIcon : styles.clearIcon]}
+        icon={searchInputEmpty ? searchIcon : clearIcon}
+        onPress={clearInput}
+        disabled={searchInputEmpty}
+      />
     </View>
   );
 };
 
 SearchBar.propTypes = {
-  viewStyle: ViewPropTypes.style,
   searchInput: PropTypes.string.isRequired,
-  placeholder: PropTypes.string,
   handleInput: PropTypes.func.isRequired,
-  textInputRef: PropTypes.shape({ current: PropTypes.instanceOf(TextInput) })
+  placeholder: PropTypes.string,
+  viewStyle: ViewPropTypes.style,
+  clearInput: PropTypes.func.isRequired
 };
 
 SearchBar.defaultProps = {
