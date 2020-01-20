@@ -5,6 +5,7 @@ import HomeScreen from 'src/screens/Home';
 import CommentsScreen from 'src/screens/Comments';
 import SightingsScreen from 'src/screens/Sightings';
 import MapScreen from 'src/screens/Map';
+import FlowerDetailsScreen from 'src/screens/FlowerDetails';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
@@ -13,7 +14,6 @@ import titleLogo from 'src/assets/icons/title/title-logo.png';
 import menuDots from 'src/assets/icons/menu/menu-dots.png';
 import { TabUtils } from 'src/utils';
 import styles from 'src/navigation/styles';
-import { NavigationService } from 'src/services';
 import iconButtonStyles from 'src/components/IconButton/styles';
 
 const HomeStack = createStackNavigator(
@@ -21,15 +21,35 @@ const HomeStack = createStackNavigator(
     [screenNames.HOME]: {
       screen: HomeScreen,
       navigationOptions: () => ({
-        headerTitle: <Image source={titleLogo} />,
-        headerRight:
-          Platform.OS === 'ios' ? (
-            <IconButton icon={menuDots} onPress={() => alert('Coming soon')} style={iconButtonStyles.rightButton} />
-          ) : null,
-        headerLeft:
-          Platform.OS !== 'ios' ? (
-            <IconButton icon={menuDots} onPress={() => alert('Coming soon')} style={iconButtonStyles.leftButton} />
-          ) : null
+        headerTitle: <Image source={titleLogo} style={styles.headerTitle} />,
+        ...Platform.select({
+          ios: {
+            headerRight: (
+              <IconButton
+                icon={menuDots}
+                onPress={() => alert('Coming soon')}
+                viewStyle={iconButtonStyles.rightButton}
+                imageStyle={iconButtonStyles.menu}
+              />
+            )
+          },
+          android: {
+            headerLeft: (
+              <IconButton
+                icon={menuDots}
+                onPress={() => alert('Coming soon')}
+                viewStyle={iconButtonStyles.leftButton}
+                imageStyle={iconButtonStyles.menu}
+              />
+            )
+          }
+        })
+      })
+    },
+    [screenNames.FLOWER_DETAILS]: {
+      screen: FlowerDetailsScreen,
+      navigationOptions: () => ({
+        headerTitle: <Image source={titleLogo} />
       })
     }
   },
@@ -56,10 +76,13 @@ const AppStack = createBottomTabNavigator(
         // eslint-disable-next-line react/prop-types
         tabBarIcon: ({ focused }) => {
           const { icon } = TabUtils.getTabProps(routeName, focused);
-          return <IconButton onPress={() => NavigationService.navigate(routeName)} icon={icon} />;
+          return (
+            <IconButton onPress={() => navigation.navigate(routeName)} icon={icon} imageStyle={iconButtonStyles.tabs} />
+          );
         },
         tabBarOptions: {
-          showLabel: false
+          showLabel: false,
+          style: styles.tabBarStyle
         }
       };
     }

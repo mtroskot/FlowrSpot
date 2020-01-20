@@ -4,11 +4,14 @@ const { rem } = dimensions;
 
 const styles = StyleSheet.create({
   tabBarStyle: {
-    height: 49 * rem,
-    justifyContent: 'flex-start'
+    height: 49 * rem
   },
   headerStyle: {
     height: 45 * rem
+  },
+  headerTitle: {
+    height: 23 * rem,
+    width: 131 * rem
   }
 });
 

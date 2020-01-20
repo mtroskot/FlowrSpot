@@ -2,7 +2,8 @@ export const screenNames = Object.freeze({
   HOME: 'HOME',
   COMMENTS: 'COMMENTS',
   LOCATION: 'LOCATION',
-  MAP: 'MAP'
+  MAP: 'MAP',
+  FLOWER_DETAILS: 'FLOWER_DETAILS'
 });
 
 export const stackNames = Object.freeze({
