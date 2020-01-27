@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResults wrapper renders loading indicator in search results view 1`] = `
+<Fragment>
+  <View
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "borderBottomColor": "white",
+        "borderBottomWidth": 31.57894736842105,
+        "borderLeftColor": "transparent",
+        "borderLeftWidth": 15.789473684210526,
+        "borderRightColor": "transparent",
+        "borderRightWidth": 15.789473684210526,
+        "borderStyle": "solid",
+        "height": 0,
+        "marginLeft": 49.34210526315789,
+        "width": 0,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 19.736842105263158,
+        "padding": 39.473684210526315,
+      }
+    }
+  >
+    <Memo(Loader)
+      size="large"
+      viewStyle={
+        Object {
+          "padding": 19.736842105263158,
+        }
+      }
+    />
+  </View>
+</Fragment>
+`;
+
+exports[`SearchResults wrapper renders message in search results view 1`] = `
+<Fragment>
+  <View
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "borderBottomColor": "white",
+        "borderBottomWidth": 31.57894736842105,
+        "borderLeftColor": "transparent",
+        "borderLeftWidth": 15.789473684210526,
+        "borderRightColor": "transparent",
+        "borderRightWidth": 15.789473684210526,
+        "borderStyle": "solid",
+        "height": 0,
+        "marginLeft": 49.34210526315789,
+        "width": 0,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 19.736842105263158,
+        "padding": 39.473684210526315,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontFamily": "Ubuntu-Regular",
+          "fontSize": 27.63157894736842,
+          "textAlign": "center",
+        }
+      }
+    >
+      Something went wrong
+    </Text>
+  </View>
+</Fragment>
+`;
+
+exports[`SearchResults wrapper renders search results 1`] = `
+<Fragment>
+  <View
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "borderBottomColor": "white",
+        "borderBottomWidth": 31.57894736842105,
+        "borderLeftColor": "transparent",
+        "borderLeftWidth": 15.789473684210526,
+        "borderRightColor": "transparent",
+        "borderRightWidth": 15.789473684210526,
+        "borderStyle": "solid",
+        "height": 0,
+        "marginLeft": 49.34210526315789,
+        "width": 0,
+      }
+    }
+  />
+  <View>
+    <FlatList
+      ItemSeparatorComponent={[Function]}
+      bounces={false}
+      contentContainerStyle={
+        Object {
+          "borderRadius": 19.736842105263158,
+          "overflow": "hidden",
+        }
+      }
+      data={
+        Array [
+          Object {
+            "id": "id1",
+            "latin_name": "latin_name1",
+            "name": "name1",
+            "profile_picture": "profile_picture1",
+          },
+          Object {
+            "id": "id2",
+            "latin_name": "latin_name2",
+            "name": "name2",
+            "profile_picture": "profile_picture2",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      updateCellsBatchingPeriod={50}
+      windowSize={21}
+    />
+  </View>
+  <View>
+    <TouchableOpacity
+      activeOpacity={0.95}
+      onPress={[MockFunction]}
+      style={
+        Object {
+          "backgroundColor": "#e8e8e8",
+          "borderRadius": 19.736842105263158,
+          "padding": 19.736842105263158,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontFamily": "Ubuntu-Regular",
+            "fontSize": 27.63157894736842,
+            "textAlign": "center",
+          }
+        }
+      >
+        Close
+      </Text>
+    </TouchableOpacity>
+  </View>
+</Fragment>
+`;
