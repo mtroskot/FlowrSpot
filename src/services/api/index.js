@@ -1,5 +1,15 @@
-import { DEFAULT_ERROR } from 'src/constants/error';
 import axios from 'axios';
+
+const defaultOptions = {
+  baseURL: 'https://flowrspot-api.herokuapp.com/api/v1/',
+  headers: {
+    Accept: 'application/json'
+  },
+  validateStatus(status) {
+    return status === 200; // Accept only status code 200
+  },
+  timeout: 5000
+};
 
 /**
  * Calls api and checks if response status is OK.
@@ -8,41 +18,28 @@ import axios from 'axios';
  * @param {string} failMessage The message that will be thrown is response status is not OK.
  * @throws error if response status is not OK.
  */
-async function callApiAndCheckResponse(url, options, failMessage = DEFAULT_ERROR) {
-  const defaultOptions = {
-    baseURL: 'https://flowrspot-api.herokuapp.com/api/v1/',
-    headers: {
-      Accept: 'application/json'
-    },
-    timeout: 5000
-  };
+async function callApiAndCheckResponse({ url, options }) {
   const fetchOptions = { ...defaultOptions, ...options };
   const response = await axios(url, fetchOptions);
-  if (response.status !== 200) {
-    throw failMessage;
-  } else {
-    return response.data;
-  }
+  return response.data;
 }
 
-function getFlowers(page) {
-  const url = `flowers?page=${page}`;
-  const options = {
-    method: 'GET'
-  };
-  return callApiAndCheckResponse(url, options);
-}
-
-function searchFlowers(searchInput, cancelToken) {
-  const url = `flowers/search?query=${searchInput}`;
-  const options = {
-    method: 'GET',
-    cancelToken
-  };
-  return callApiAndCheckResponse(url, options);
+/**
+ * Calls api
+ * @param url The api endpoint
+ * @param options
+ * @returns {Promise<AxiosResponse<any>>}
+ */
+async function callApi({ url, options }) {
+  const fetchOptions = { ...defaultOptions, ...options };
+  const response = await axios(url, fetchOptions);
+  return response;
 }
 
 export default {
-  getFlowers,
-  searchFlowers
+  callApiAndCheckResponse,
+  callApi
 };
+
+export { default as userRequests } from 'src/services/api/user';
+export { default as flowerRequests } from 'src/services/api/flowers';
