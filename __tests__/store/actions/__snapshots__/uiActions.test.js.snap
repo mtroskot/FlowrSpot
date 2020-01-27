@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI actions tests dispatches refreshActionStart action 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "refreshAction": "refreshAction",
+    },
+    "type": "REFRESH_ACTION_START",
+  },
+]
+`;
+
+exports[`UI actions tests dispatches refreshActionStop action 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "refreshAction": "narefreshActionme",
+    },
+    "type": "REFRESH_ACTION_STOP",
+  },
+]
+`;
+
+exports[`UI actions tests dispatches startAction action 1 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "action": Object {
+        "name": "name",
+        "params": Object {
+          "id": "id",
+        },
+      },
+    },
+    "type": "START_ACTION",
+  },
+]
+`;
+
+exports[`UI actions tests dispatches startAction action 2, params undefined 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "action": Object {
+        "name": "name",
+        "params": undefined,
+      },
+    },
+    "type": "START_ACTION",
+  },
+]
+`;
+
+exports[`UI actions tests dispatches stopAction action 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "name": "name",
+    },
+    "type": "STOP_ACTION",
+  },
+]
+`;
+
+exports[`UI actions tests dispatches togglePopupMessage action 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "message": "message",
+      "position": "position",
+    },
+    "type": "TOGGLE_POPUP_MESSAGE",
+  },
+]
+`;

@@ -1,0 +1,415 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`INITIAL_STATE 1returns initial state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [],
+    "refreshing": Array [],
+  },
+  "popupMessage": Object {
+    "message": null,
+    "position": null,
+  },
+}
+`;
+
+exports[`INITIAL_STATE 2returns start action state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [
+      Object {
+        "name": "ACTION_NAME",
+        "params": undefined,
+      },
+    ],
+    "refreshing": Array [],
+  },
+  "popupMessage": Object {
+    "message": null,
+    "position": null,
+  },
+}
+`;
+
+exports[`INITIAL_STATE 3returns stop action state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [],
+    "refreshing": Array [],
+  },
+  "popupMessage": Object {
+    "message": null,
+    "position": null,
+  },
+}
+`;
+
+exports[`INITIAL_STATE 4returns refresh action start state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [],
+    "refreshing": Array [
+      "ACTION_NAME",
+    ],
+  },
+  "popupMessage": Object {
+    "message": null,
+    "position": null,
+  },
+}
+`;
+
+exports[`INITIAL_STATE 5returns refresh action stop state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [],
+    "refreshing": Array [],
+  },
+  "popupMessage": Object {
+    "message": null,
+    "position": null,
+  },
+}
+`;
+
+exports[`INITIAL_STATE 6returns toggle popup message state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [],
+    "refreshing": Array [],
+  },
+  "popupMessage": Object {
+    "message": "message",
+    "position": "position",
+  },
+}
+`;
+
+exports[`REFRESH_ACTION_START_STATE 13returns initial state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [],
+    "refreshing": Array [
+      "ACTION_NAME",
+      "ACTION_NAME",
+      "ACTION_NAME2",
+    ],
+  },
+  "popupMessage": Object {
+    "message": null,
+    "position": null,
+  },
+}
+`;
+
+exports[`REFRESH_ACTION_START_STATE 14returns start action state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [
+      Object {
+        "name": "ACTION_NAME",
+        "params": undefined,
+      },
+    ],
+    "refreshing": Array [
+      "ACTION_NAME",
+      "ACTION_NAME",
+      "ACTION_NAME2",
+    ],
+  },
+  "popupMessage": Object {
+    "message": null,
+    "position": null,
+  },
+}
+`;
+
+exports[`REFRESH_ACTION_START_STATE 15returns stop action state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [],
+    "refreshing": Array [
+      "ACTION_NAME",
+      "ACTION_NAME",
+      "ACTION_NAME2",
+    ],
+  },
+  "popupMessage": Object {
+    "message": null,
+    "position": null,
+  },
+}
+`;
+
+exports[`REFRESH_ACTION_START_STATE 16returns refresh action start state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [],
+    "refreshing": Array [
+      "ACTION_NAME",
+      "ACTION_NAME",
+      "ACTION_NAME2",
+      "ACTION_NAME",
+    ],
+  },
+  "popupMessage": Object {
+    "message": null,
+    "position": null,
+  },
+}
+`;
+
+exports[`REFRESH_ACTION_START_STATE 17returns refresh action stop state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [],
+    "refreshing": Array [
+      "ACTION_NAME2",
+    ],
+  },
+  "popupMessage": Object {
+    "message": null,
+    "position": null,
+  },
+}
+`;
+
+exports[`REFRESH_ACTION_START_STATE 18returns toggle popup message state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [],
+    "refreshing": Array [
+      "ACTION_NAME",
+      "ACTION_NAME",
+      "ACTION_NAME2",
+    ],
+  },
+  "popupMessage": Object {
+    "message": "message",
+    "position": "position",
+  },
+}
+`;
+
+exports[`START_ACTION_STATE 7returns initial state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [
+      Object {
+        "name": "ACTION_NAME",
+      },
+      Object {
+        "name": "ACTION_NAME",
+      },
+      Object {
+        "name": "ACTION_NAME2",
+      },
+    ],
+    "refreshing": Array [],
+  },
+  "popupMessage": Object {
+    "message": null,
+    "position": null,
+  },
+}
+`;
+
+exports[`START_ACTION_STATE 8returns start action state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [
+      Object {
+        "name": "ACTION_NAME",
+      },
+      Object {
+        "name": "ACTION_NAME",
+      },
+      Object {
+        "name": "ACTION_NAME2",
+      },
+      Object {
+        "name": "ACTION_NAME",
+        "params": undefined,
+      },
+    ],
+    "refreshing": Array [],
+  },
+  "popupMessage": Object {
+    "message": null,
+    "position": null,
+  },
+}
+`;
+
+exports[`START_ACTION_STATE 9returns stop action state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [
+      Object {
+        "name": "ACTION_NAME2",
+      },
+    ],
+    "refreshing": Array [],
+  },
+  "popupMessage": Object {
+    "message": null,
+    "position": null,
+  },
+}
+`;
+
+exports[`START_ACTION_STATE 10returns refresh action start state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [
+      Object {
+        "name": "ACTION_NAME",
+      },
+      Object {
+        "name": "ACTION_NAME",
+      },
+      Object {
+        "name": "ACTION_NAME2",
+      },
+    ],
+    "refreshing": Array [
+      "ACTION_NAME",
+    ],
+  },
+  "popupMessage": Object {
+    "message": null,
+    "position": null,
+  },
+}
+`;
+
+exports[`START_ACTION_STATE 11returns refresh action stop state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [
+      Object {
+        "name": "ACTION_NAME",
+      },
+      Object {
+        "name": "ACTION_NAME",
+      },
+      Object {
+        "name": "ACTION_NAME2",
+      },
+    ],
+    "refreshing": Array [],
+  },
+  "popupMessage": Object {
+    "message": null,
+    "position": null,
+  },
+}
+`;
+
+exports[`START_ACTION_STATE 12returns toggle popup message state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [
+      Object {
+        "name": "ACTION_NAME",
+      },
+      Object {
+        "name": "ACTION_NAME",
+      },
+      Object {
+        "name": "ACTION_NAME2",
+      },
+    ],
+    "refreshing": Array [],
+  },
+  "popupMessage": Object {
+    "message": "message",
+    "position": "position",
+  },
+}
+`;
+
+exports[`TOGGLE_POPUP_MESSAGE_STATE 19returns initial state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [],
+    "refreshing": Array [],
+  },
+  "popupMessage": Object {
+    "message": "message",
+    "position": "position",
+  },
+}
+`;
+
+exports[`TOGGLE_POPUP_MESSAGE_STATE 20returns start action state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [
+      Object {
+        "name": "ACTION_NAME",
+        "params": undefined,
+      },
+    ],
+    "refreshing": Array [],
+  },
+  "popupMessage": Object {
+    "message": "message",
+    "position": "position",
+  },
+}
+`;
+
+exports[`TOGGLE_POPUP_MESSAGE_STATE 21returns stop action state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [],
+    "refreshing": Array [],
+  },
+  "popupMessage": Object {
+    "message": "message",
+    "position": "position",
+  },
+}
+`;
+
+exports[`TOGGLE_POPUP_MESSAGE_STATE 22returns refresh action start state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [],
+    "refreshing": Array [
+      "ACTION_NAME",
+    ],
+  },
+  "popupMessage": Object {
+    "message": "message",
+    "position": "position",
+  },
+}
+`;
+
+exports[`TOGGLE_POPUP_MESSAGE_STATE 23returns refresh action stop state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [],
+    "refreshing": Array [],
+  },
+  "popupMessage": Object {
+    "message": "message",
+    "position": "position",
+  },
+}
+`;
+
+exports[`TOGGLE_POPUP_MESSAGE_STATE 24returns toggle popup message state 1`] = `
+Object {
+  "loader": Object {
+    "actions": Array [],
+    "refreshing": Array [],
+  },
+  "popupMessage": Object {
+    "message": "message2",
+    "position": "position2",
+  },
+}
+`;

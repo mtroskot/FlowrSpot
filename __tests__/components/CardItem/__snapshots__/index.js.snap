@@ -1,0 +1,324 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardItem wrapper renders correctly, user not authenticated, no IconButton   1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  onPress={[MockFunction]}
+>
+  <ImageBackground
+    source={
+      Object {
+        "uri": "https:image",
+      }
+    }
+    style={
+      Object {
+        "height": 394.7368421052631,
+        "justifyContent": "space-between",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignSelf": "flex-end",
+          "borderRadius": 29.605263157894736,
+          "height": 59.21052631578947,
+          "margin": 31.57894736842105,
+          "width": 59.21052631578947,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "justifyContent": "flex-end",
+          "marginBottom": 31.57894736842105,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#fff",
+            "fontFamily": "Ubuntu-Regular",
+            "fontSize": 35.526315789473685,
+            "marginBottom": 17.763157894736842,
+            "marginTop": 19.736842105263158,
+            "textAlign": "center",
+          }
+        }
+      >
+        title
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#fff",
+            "fontFamily": "Ubuntu-Italic",
+            "fontSize": 21.710526315789473,
+            "marginBottom": 29.605263157894736,
+            "opacity": 0.7,
+            "textAlign": "center",
+          }
+        }
+      >
+        subTitle
+      </Text>
+      <View
+        style={
+          Object {
+            "alignSelf": "center",
+            "backgroundColor": "black",
+            "borderRadius": 31.57894736842105,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#fff",
+              "fontFamily": "Ubuntu-Regular",
+              "fontSize": 21.710526315789473,
+              "paddingHorizontal": 23.684210526315788,
+              "paddingVertical": 11.842105263157894,
+              "textAlign": "center",
+            }
+          }
+        >
+          additionalInfo
+           sightings
+        </Text>
+      </View>
+    </View>
+  </ImageBackground>
+</TouchableOpacity>
+`;
+
+exports[`CardItem wrapper renders correctly,user authenticated,id same as updatingItemId IconButton rendered,item marked as favorite 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  onPress={[MockFunction]}
+>
+  <ImageBackground
+    source={
+      Object {
+        "uri": "https:image",
+      }
+    }
+    style={
+      Object {
+        "height": 394.7368421052631,
+        "justifyContent": "space-between",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignSelf": "flex-end",
+          "borderRadius": 29.605263157894736,
+          "height": 59.21052631578947,
+          "margin": 31.57894736842105,
+          "width": 59.21052631578947,
+        }
+      }
+    >
+      <Memo(IconButton)
+        icon={
+          Object {
+            "testUri": "../../../src/assets/icons/star/star.png",
+          }
+        }
+        imageStyle={
+          Array [
+            Object {
+              "height": 23.684210526315788,
+              "width": 23.684210526315788,
+            },
+            Object {
+              "tintColor": "#ffc20d",
+            },
+          ]
+        }
+        onPress={[MockFunction]}
+        viewStyle={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "white",
+            "borderRadius": 29.605263157894736,
+            "height": 59.21052631578947,
+            "justifyContent": "center",
+            "width": 59.21052631578947,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "justifyContent": "flex-end",
+          "marginBottom": 31.57894736842105,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#fff",
+            "fontFamily": "Ubuntu-Regular",
+            "fontSize": 35.526315789473685,
+            "marginBottom": 17.763157894736842,
+            "marginTop": 19.736842105263158,
+            "textAlign": "center",
+          }
+        }
+      >
+        title
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#fff",
+            "fontFamily": "Ubuntu-Italic",
+            "fontSize": 21.710526315789473,
+            "marginBottom": 29.605263157894736,
+            "opacity": 0.7,
+            "textAlign": "center",
+          }
+        }
+      >
+        subTitle
+      </Text>
+      <View
+        style={
+          Object {
+            "alignSelf": "center",
+            "backgroundColor": "black",
+            "borderRadius": 31.57894736842105,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#fff",
+              "fontFamily": "Ubuntu-Regular",
+              "fontSize": 21.710526315789473,
+              "paddingHorizontal": 23.684210526315788,
+              "paddingVertical": 11.842105263157894,
+              "textAlign": "center",
+            }
+          }
+        >
+          additionalInfo
+           sightings
+        </Text>
+      </View>
+    </View>
+  </ImageBackground>
+</TouchableOpacity>
+`;
+
+exports[`CardItem wrapper renders correctly,user authenticated,id same as updatingItemId loader rendered in place of IconButton 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  onPress={[MockFunction]}
+>
+  <ImageBackground
+    source={
+      Object {
+        "uri": "https:image",
+      }
+    }
+    style={
+      Object {
+        "height": 394.7368421052631,
+        "justifyContent": "space-between",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignSelf": "flex-end",
+          "borderRadius": 29.605263157894736,
+          "height": 59.21052631578947,
+          "margin": 31.57894736842105,
+          "width": 59.21052631578947,
+        }
+      }
+    >
+      <Memo(Loader)
+        color="red"
+        size="small"
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "justifyContent": "flex-end",
+          "marginBottom": 31.57894736842105,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#fff",
+            "fontFamily": "Ubuntu-Regular",
+            "fontSize": 35.526315789473685,
+            "marginBottom": 17.763157894736842,
+            "marginTop": 19.736842105263158,
+            "textAlign": "center",
+          }
+        }
+      >
+        title
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#fff",
+            "fontFamily": "Ubuntu-Italic",
+            "fontSize": 21.710526315789473,
+            "marginBottom": 29.605263157894736,
+            "opacity": 0.7,
+            "textAlign": "center",
+          }
+        }
+      >
+        subTitle
+      </Text>
+      <View
+        style={
+          Object {
+            "alignSelf": "center",
+            "backgroundColor": "black",
+            "borderRadius": 31.57894736842105,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#fff",
+              "fontFamily": "Ubuntu-Regular",
+              "fontSize": 21.710526315789473,
+              "paddingHorizontal": 23.684210526315788,
+              "paddingVertical": 11.842105263157894,
+              "textAlign": "center",
+            }
+          }
+        >
+          additionalInfo
+           sightings
+        </Text>
+      </View>
+    </View>
+  </ImageBackground>
+</TouchableOpacity>
+`;

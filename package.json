@@ -31,7 +31,6 @@
     "react-native-reanimated": "^1.4.0",
     "react-native-screens": "^1.0.0-alpha.23",
     "react-navigation": "^4.0.10",
-    "react-navigation-drawer": "^2.3.3",
     "react-navigation-stack": "^1.10.3",
     "react-navigation-tabs": "^2.7.0",
     "react-redux": "^7.1.3",
@@ -84,13 +83,13 @@
       "html"
     ],
     "coveragePathIgnorePatterns": [
-      "<rootDir>/app/services/navigation",
-      "<rootDir>/app/services/api",
-      "<rootDir>/app/store/configureStore",
-      "<rootDir>/app/store/middlewares",
-      "<rootDir>/app/store/sagas/rootSaga",
-      "<rootDir>/app/store/reducers/rootReducer",
-      "<rootDir>/app/models"
+      "<rootDir>/src/services/navigation",
+      "<rootDir>/src/services/api",
+      "<rootDir>/src/store/configureStore",
+      "<rootDir>/src/store/middlewares",
+      "<rootDir>/src/store/sagas/rootSaga",
+      "<rootDir>/src/store/reducers/rootReducer",
+      "<rootDir>/src/models"
     ]
   }
 }

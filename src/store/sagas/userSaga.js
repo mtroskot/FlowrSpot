@@ -34,13 +34,13 @@ export function* loginUserSaga({ type, payload }) {
     const { email, password } = payload;
     const authResponse = yield call(ApiService.callApiAndCheckResponse, userRequests.login(email, password));
     const { auth_token, error } = authResponse;
-    if (StringUtils.isNotEmpty(auth_token)) {
+    if (yield call(StringUtils.isNotEmpty, auth_token)) {
       const userInfoResponse = yield call(ApiService.callApiAndCheckResponse, userRequests.getUserInfo(auth_token));
       const { id, first_name, last_name } = userInfoResponse.user;
       yield put(loginUserSuccess(id, email, auth_token, first_name, last_name));
       yield put(getFavoriteFlowers());
       yield call(NavigationService.goBack);
-    } else if (StringUtils.isNotEmpty(error)) {
+    } else if (yield call(StringUtils.isNotEmpty, error)) {
       yield put(togglePopupMessage(error, 'top'));
     }
   } catch (error) {

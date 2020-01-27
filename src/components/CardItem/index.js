@@ -5,18 +5,29 @@ import PropTypes from 'prop-types';
 import star from 'src/assets/icons/star/star.png';
 import styles from 'src/components/CardItem/styles';
 
+/**
+ * Renders button or loading indicator.
+ * @param id The id of the item
+ * @param updatingItemId The id of item which is being updated
+ * @param isAuthenticated If user is authenticated
+ * @param isFavorite If item is marked as favorite
+ * @param onIconPress Callback function for IconButton
+ * @returns {IconButton|Loader3}
+ */
 function renderButton(id, updatingItemId, isAuthenticated, isFavorite, onIconPress) {
-  if (id === updatingItemId) {
-    return <Loader color={'red'} size={'small'} />;
-  } else if (isAuthenticated) {
-    return (
-      <IconButton
-        icon={star}
-        viewStyle={styles.starSubContainer}
-        imageStyle={[styles.iconStyle, { tintColor: isFavorite ? '#ffc20d' : null }]}
-        onPress={onIconPress}
-      />
-    );
+  if (isAuthenticated) {
+    if (id === updatingItemId) {
+      return <Loader color={'red'} size={'small'} />;
+    } else {
+      return (
+        <IconButton
+          icon={star}
+          viewStyle={styles.starSubContainer}
+          imageStyle={[styles.iconStyle, { tintColor: isFavorite ? '#ffc20d' : null }]}
+          onPress={onIconPress}
+        />
+      );
+    }
   }
   return null;
 }

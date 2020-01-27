@@ -7,6 +7,13 @@ import styles from 'src/screens/Home/FlowerListItem/styles';
 import { dimensions } from 'src/styles';
 const { rem } = dimensions;
 
+/**
+ * Calculates margins needed for each item in FlatList with 2 columns,
+ * so that the item distance from borders and other items is equal
+ * @param index The index of current element
+ * @param arrayLength The length of FlatList data array
+ * @returns {{marginLeftWidth: number, marginBottomWidth: number, marginRightWidth: number}}
+ */
 function calculateMargins(index, arrayLength) {
   const marginWidth = 12;
   const marginLeftWidth = index % 2 === 0 ? marginWidth * rem : (marginWidth / 2) * rem;

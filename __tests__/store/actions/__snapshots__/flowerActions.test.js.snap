@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flower actions tests dispatches favoriteFlower action 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "flowerId": "flowerId",
+    },
+    "type": "FAVORITE_FLOWER",
+  },
+]
+`;
+
+exports[`Flower actions tests dispatches favoriteFlowerSuccess action 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "favoriteId": "favoriteId",
+      "flowerId": "flowerId",
+    },
+    "type": "FAVORITE_FLOWER_SUCCESS",
+  },
+]
+`;
+
+exports[`Flower actions tests dispatches getFavoriteFlowers action 1`] = `
+Array [
+  Object {
+    "payload": Object {},
+    "type": "GET_FAVORITE_FLOWERS",
+  },
+]
+`;
+
+exports[`Flower actions tests dispatches getFavoriteFlowersSuccess action 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "favoriteFlowers": Array [],
+    },
+    "type": "GET_FAVORITE_FLOWERS_SUCCESS",
+  },
+]
+`;
+
+exports[`Flower actions tests dispatches unfavoriteFlower action 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "favoriteId": "favoriteId",
+      "flowerId": "flowerId",
+    },
+    "type": "UNFAVORITE_FLOWER",
+  },
+]
+`;
+
+exports[`Flower actions tests dispatches unfavoriteFlowerSuccess action 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "flowerId": "flowerId",
+    },
+    "type": "UNFAVORITE_FLOWER_SUCCESS",
+  },
+]
+`;
