@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResultItem wrapper renders correctly 1`] = `
+<TouchableOpacity
+  activeOpacity={0.95}
+  onPress={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "flexDirection": "row",
+      "padding": 9.868421052631579,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 0.2,
+        "paddingLeft": 39.473684210526315,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "https:profile_picture",
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 49.34210526315789,
+          "height": 98.68421052631578,
+          "resizeMode": "cover",
+          "width": 98.68421052631578,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 0.8,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#000",
+          "fontFamily": "Ubuntu-Regular",
+          "fontSize": 31.57894736842105,
+        }
+      }
+    >
+      name
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#666666",
+          "fontFamily": "Ubuntu-Italic",
+          "fontSize": 23.684210526315788,
+          "marginTop": 9.868421052631579,
+        }
+      }
+    >
+      latin_name
+    </Text>
+  </View>
+</TouchableOpacity>
+`;
