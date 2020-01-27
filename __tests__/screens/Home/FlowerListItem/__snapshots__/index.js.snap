@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FlowerListItem wrapper renders correctly, favoriteFlowerList contains item id 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderRadius": 5.921052631578947,
+        "flex": 0.5,
+        "marginTop": 23.684210526315788,
+        "overflow": "hidden",
+      },
+      Object {
+        "marginBottom": 0,
+        "marginLeft": 23.684210526315788,
+        "marginRight": 11.842105263157894,
+      },
+    ]
+  }
+>
+  <Memo(CardItem)
+    additionalInfo="sightings"
+    id="id"
+    image="profile_picture"
+    isAuthenticated={false}
+    isFavorite={true}
+    onIconPress={[Function]}
+    onItemPress={[Function]}
+    subTitle="latin_name"
+    title="name"
+    updatingItemId={null}
+  />
+</View>
+`;
+
+exports[`FlowerListItem wrapper renders correctly, favoriteFlowerList empty 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderRadius": 5.921052631578947,
+        "flex": 0.5,
+        "marginTop": 23.684210526315788,
+        "overflow": "hidden",
+      },
+      Object {
+        "marginBottom": 0,
+        "marginLeft": 23.684210526315788,
+        "marginRight": 11.842105263157894,
+      },
+    ]
+  }
+>
+  <Memo(CardItem)
+    additionalInfo="sightings"
+    id="id"
+    image="profile_picture"
+    isAuthenticated={false}
+    isFavorite={false}
+    onIconPress={[Function]}
+    onItemPress={[Function]}
+    subTitle="latin_name"
+    title="name"
+    updatingItemId={null}
+  />
+</View>
+`;
