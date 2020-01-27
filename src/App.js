@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import { PopupMessage } from 'src/components';
 import { Provider } from 'react-redux';
 import AppContainer from 'src/navigation';
 import { NavigationService } from 'src/services';
@@ -10,6 +11,7 @@ export default function App() {
     <Provider store={store}>
       <View style={styles.container}>
         <AppContainer ref={ref => NavigationService.setTopLevelNavigator(ref)} />
+        <PopupMessage />
       </View>
     </Provider>
   );
