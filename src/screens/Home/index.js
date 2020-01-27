@@ -1,20 +1,26 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { favoriteFlower, unfavoriteFlower } from 'src/store/actions/flowerActions';
+import { checkIfUserAuthenticated, getUpdatingItemId } from 'src/store/selectors';
 import { ActivityIndicator, FlatList, ImageBackground, RefreshControl, Text, View } from 'react-native';
 import { Error404, KeyboardAvoidAndDismissView, Loader, SearchBar } from 'src/components';
 import SearchResults from 'src/screens/Home/SearchResults';
 import FlowerListItem from 'src/screens/Home/FlowerListItem';
 import { ApiService } from 'src/services';
+import { flowerRequests } from 'src/services/api';
 import axios from 'axios';
-import { StringUtils } from 'src/utils';
-import homeBackground from 'src/assets/images/background/home-background.png';
-import styles from 'src/screens/Home/styles';
+import { HookUtils, StringUtils } from 'src/utils';
 import { screenNames } from 'src/constants/navigation';
 import NavigationService from 'src/services/navigation';
-import { DEFAULT_ERROR } from 'src/constants/error';
+import { DEFAULT_ERROR } from 'src/constants/messages';
+import PropTypes from 'prop-types';
+import { flowerActionTypes } from 'src/constants/actionTypes';
+import { favoriteFlowerListPropTypes } from 'src/constants/propTypes';
+import homeBackground from 'src/assets/images/background/home-background.png';
+import styles from 'src/screens/Home/styles';
 
 const CancelToken = axios.CancelToken;
 let source = null;
-let yOffset = 0;
 const initialPaginationState = {
   currentPage: 1,
   totalPages: null
@@ -26,11 +32,8 @@ const initialSearchDataState = {
   showSearchResults: true
 };
 
-function setYOffset(event) {
-  yOffset = event.nativeEvent.contentOffset.y;
-}
-
-const Home = () => {
+const Home = props => {
+  const [yOffset, setYOffset] = useState(0);
   const [searchInput, setSearchInput] = useState('');
   const [searchData, setSearchData] = useState(initialSearchDataState);
   const [searchingSearchBar, setSearchingSearchBar] = useState(false);
@@ -40,14 +43,12 @@ const Home = () => {
   const [refreshing, setRefreshing] = useState(false);
   const [searchingFlatList, setSearchingFlatList] = useState(false);
 
-  useEffect(() => {
-    fetchFlowers(flowerListPagination.currentPage);
-  }, [fetchFlowers, flowerListPagination.currentPage]);
+  HookUtils.useDidMount(() => fetchFlowers(flowerListPagination.currentPage));
 
-  const fetchFlowers = useCallback(async (page, refreshing = false) => {
+  const fetchFlowers = async (page, refreshing = false) => {
     try {
       refreshing ? setRefreshing(true) : setSearchingFlatList(true);
-      const response = await ApiService.getFlowers(page);
+      const response = await ApiService.callApiAndCheckResponse(flowerRequests.getFlowers(page));
       const { flowers, meta } = response;
       const { pagination } = meta;
       setFlowerListPagination({
@@ -61,7 +62,7 @@ const Home = () => {
     } finally {
       refreshing ? setRefreshing(false) : setSearchingFlatList(false);
     }
-  });
+  };
 
   useEffect(() => {
     source = CancelToken.source();
@@ -79,7 +80,7 @@ const Home = () => {
       source.cancel();
       clearTimeout(handler);
     };
-  }, [searchData, searchFlowers, searchInput]);
+  }, [searchInput]);
 
   const searchFlowers = async (searchInput, cancelToken) => {
     try {
@@ -88,7 +89,7 @@ const Home = () => {
         showSearchResults: true
       });
       setSearchingSearchBar(true);
-      const response = await ApiService.searchFlowers(searchInput, cancelToken);
+      const response = await ApiService.callApiAndCheckResponse(flowerRequests.searchFlowers(searchInput, cancelToken));
       const { flowers } = response;
       setSearchData({
         searchQuery: searchInput,
@@ -118,7 +119,10 @@ const Home = () => {
   const onEndReached = ({ distanceFromEnd }) => {
     if (distanceFromEnd > 0 && !searchingFlatList && moreResultsAvailable && !searchInput) {
       const page = flowerListPagination.currentPage + 1;
-      setFlowerListPagination({ currentPage: page, totalPages: flowerListPagination.totalPages });
+      setFlowerListPagination({
+        currentPage: page,
+        totalPages: flowerListPagination.totalPages
+      });
       fetchFlowers(flowerListPagination.currentPage + 1);
     }
   };
@@ -127,10 +131,14 @@ const Home = () => {
     setSearchInput('');
     setFlowerListPagination(initialPaginationState);
     fetchFlowers(initialPaginationState.currentPage, true);
-  }, [fetchFlowers]);
+  }, []);
 
   const onFavoritePress = flowerId => {
-    console.log(flowerId);
+    props.favoriteFlower(flowerId);
+  };
+
+  const onUnfavoritePress = (flowerId, favoriteId) => {
+    props.unfavoriteFlower(flowerId, favoriteId);
   };
 
   const onFlowerPress = flowerId => {
@@ -141,11 +149,16 @@ const Home = () => {
     setSearchData({ ...searchData, showSearchResults: false });
   };
 
+  function setOffset(event) {
+    setYOffset(event.nativeEvent.contentOffset.y);
+  }
+
   const moreResultsAvailable =
     flowerListPagination.currentPage < flowerListPagination.totalPages && flowerListPagination.totalPages;
   const showSearchResults =
     (searchData.searchResults.length > 0 || StringUtils.isNotEmpty(searchData.message) || searchingSearchBar) &&
     searchData.showSearchResults;
+  const { isAuthenticated, updatingItemId, favoriteFlowerList } = props;
   return (
     <View style={styles.container}>
       <FlatList
@@ -168,16 +181,29 @@ const Home = () => {
         }
         ListFooterComponent={searchingFlatList && flowerList.length > 0 ? <ActivityIndicator size={'large'} /> : null}
         ListEmptyComponent={error ? <Error404 /> : <Loader text={'Loading flower list'} />}
+        data={flowerList}
         renderItem={({ item, index }) => (
-          <FlowerListItem {...{ item, index, arrayLength: flowerList.length, onFlowerPress, onFavoritePress }} />
+          <FlowerListItem
+            {...{
+              item,
+              index,
+              arrayLength: flowerList.length,
+              onFlowerPress,
+              onFavoritePress,
+              onUnfavoritePress,
+              isAuthenticated,
+              updatingItemId,
+              favoriteFlowerList
+            }}
+          />
         )}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
-        data={flowerList}
-        scrollEnabled={!showSearchResults}
+        // scrollEnabled={!showSearchResults}
+        scrollEnabled={true}
         onEndReached={onEndReached}
         onEndReachedThreshold={0.5}
-        onMomentumScrollEnd={setYOffset}
-        onScrollEndDrag={setYOffset}
+        onMomentumScrollEnd={setOffset}
+        onScrollEndDrag={setOffset}
         numColumns={2}
         contentContainerStyle={styles.flatListContentContainer}
         keyExtractor={item => item.id}
@@ -200,6 +226,24 @@ const Home = () => {
   );
 };
 
-Home.propTypes = {};
+Home.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+  updatingItemId: PropTypes.number,
+  favoriteFlowerList: favoriteFlowerListPropTypes.isRequired,
+  favoriteFlower: PropTypes.func.isRequired,
+  unfavoriteFlower: PropTypes.func.isRequired
+};
 
-export default React.memo(Home);
+const mapStateToProps = state => ({
+  isAuthenticated: checkIfUserAuthenticated(state),
+  updatingItemId: getUpdatingItemId(state, flowerActionTypes.FAVORITE_FLOWER, flowerActionTypes.UNFAVORITE_FLOWER),
+  favoriteFlowerList: state.flower.favorites
+});
+const mapDispatchToProps = {
+  favoriteFlower,
+  unfavoriteFlower
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(React.memo(Home));

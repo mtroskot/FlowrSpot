@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
     borderRadius: circle / 2,
     margin: 16 * rem
   },
+  iconStyle: {
+    width: 12 * rem,
+    height: 12 * rem
+  },
   starSubContainer: {
     backgroundColor: 'white',
     height: circle,

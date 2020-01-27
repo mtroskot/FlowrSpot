@@ -1,22 +1,43 @@
 import React from 'react';
 import { ImageBackground, Text, TouchableOpacity, View } from 'react-native';
-import { IconButton } from 'src/components/index';
+import { IconButton, Loader } from 'src/components';
 import PropTypes from 'prop-types';
 import star from 'src/assets/icons/star/star.png';
 import styles from 'src/components/CardItem/styles';
-import { dimensions } from 'src/styles';
-const { rem } = dimensions;
-const CardItem = ({ title, subTitle, additionalInfo, image, isFavorite, onItemPress, onIconPress }) => {
+
+function renderButton(id, updatingItemId, isAuthenticated, isFavorite, onIconPress) {
+  if (id === updatingItemId) {
+    return <Loader color={'red'} size={'small'} />;
+  } else if (isAuthenticated) {
+    return (
+      <IconButton
+        icon={star}
+        viewStyle={styles.starSubContainer}
+        imageStyle={[styles.iconStyle, { tintColor: isFavorite ? '#ffc20d' : null }]}
+        onPress={onIconPress}
+      />
+    );
+  }
+  return null;
+}
+
+const CardItem = ({
+  id,
+  title,
+  subTitle,
+  additionalInfo,
+  image,
+  isFavorite,
+  onItemPress,
+  onIconPress,
+  isAuthenticated,
+  updatingItemId
+}) => {
   return (
     <TouchableOpacity onPress={onItemPress}>
       <ImageBackground source={{ uri: `https:${image}` }} style={styles.imageContainer}>
         <View style={styles.starContainer}>
-          <IconButton
-            icon={star}
-            viewStyle={styles.starSubContainer}
-            imageStyle={{ tintColor: isFavorite ? '#ffc20d' : null, width: 12 * rem, height: 12 * rem }}
-            onPress={onIconPress}
-          />
+          {renderButton(id, updatingItemId, isAuthenticated, isFavorite, onIconPress)}
         </View>
         <View style={styles.textContainer}>
           <Text style={styles.title}>{title}</Text>
@@ -31,11 +52,14 @@ const CardItem = ({ title, subTitle, additionalInfo, image, isFavorite, onItemPr
 };
 
 CardItem.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
   additionalInfo: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   isFavorite: PropTypes.bool.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
+  updatingItemId: PropTypes.number,
   onIconPress: PropTypes.func.isRequired,
   onItemPress: PropTypes.func.isRequired
 };

@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { dimensions, fonts } from 'src/styles';
-const { rem } = dimensions;
+const { rem, height } = dimensions;
 
 const styles = StyleSheet.create({
   container: {
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignSelf: 'center',
     width: '90%',
-    height: '35%',
+    height: height * 0.3,
     top: 225 * rem
   }
 });
