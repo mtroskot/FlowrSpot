@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FAVORITE_FLOWER_SUCCESS STATE 1returns initial state 1`] = `
+Object {
+  "favorites": Array [
+    Object {
+      "favoriteId": 1,
+      "flowerId": 1,
+    },
+  ],
+}
+`;
+
+exports[`FAVORITE_FLOWER_SUCCESS STATE 2returns getFavoriteFlowersSuccess state 1`] = `
+Object {
+  "favorites": Array [
+    Object {
+      "favoriteId": 1,
+      "flowerId": 1,
+    },
+    Object {
+      "favoriteId": 4,
+      "flowerId": 4,
+    },
+    Object {
+      "favoriteId": 5,
+      "flowerId": 5,
+    },
+    Object {
+      "favoriteId": 6,
+      "flowerId": 6,
+    },
+  ],
+}
+`;
+
+exports[`FAVORITE_FLOWER_SUCCESS STATE 3returns favoriteFlowerSuccess state 1`] = `
+Object {
+  "favorites": Array [
+    Object {
+      "favoriteId": 1,
+      "flowerId": 1,
+    },
+    Object {
+      "favoriteId": 7,
+      "flowerId": 7,
+    },
+  ],
+}
+`;
+
+exports[`FAVORITE_FLOWER_SUCCESS STATE 4returns unfavoriteFlowerSuccess state 1`] = `
+Object {
+  "favorites": Array [],
+}
+`;
+
+exports[`GET_FAVORITE_FLOWERS_SUCCESS STATE 1returns initial state 1`] = `
+Object {
+  "favorites": Array [
+    Object {
+      "favoriteId": 1,
+      "flowerId": 1,
+    },
+    Object {
+      "favoriteId": 2,
+      "flowerId": 2,
+    },
+    Object {
+      "favoriteId": 3,
+      "flowerId": 3,
+    },
+  ],
+}
+`;
+
+exports[`GET_FAVORITE_FLOWERS_SUCCESS STATE 2returns getFavoriteFlowersSuccess state 1`] = `
+Object {
+  "favorites": Array [
+    Object {
+      "favoriteId": 1,
+      "flowerId": 1,
+    },
+    Object {
+      "favoriteId": 2,
+      "flowerId": 2,
+    },
+    Object {
+      "favoriteId": 3,
+      "flowerId": 3,
+    },
+    Object {
+      "favoriteId": 4,
+      "flowerId": 4,
+    },
+    Object {
+      "favoriteId": 5,
+      "flowerId": 5,
+    },
+    Object {
+      "favoriteId": 6,
+      "flowerId": 6,
+    },
+  ],
+}
+`;
+
+exports[`GET_FAVORITE_FLOWERS_SUCCESS STATE 3returns favoriteFlowerSuccess state 1`] = `
+Object {
+  "favorites": Array [
+    Object {
+      "favoriteId": 1,
+      "flowerId": 1,
+    },
+    Object {
+      "favoriteId": 2,
+      "flowerId": 2,
+    },
+    Object {
+      "favoriteId": 3,
+      "flowerId": 3,
+    },
+    Object {
+      "favoriteId": 7,
+      "flowerId": 7,
+    },
+  ],
+}
+`;
+
+exports[`GET_FAVORITE_FLOWERS_SUCCESS STATE 4returns unfavoriteFlowerSuccess state 1`] = `
+Object {
+  "favorites": Array [
+    Object {
+      "favoriteId": 2,
+      "flowerId": 2,
+    },
+    Object {
+      "favoriteId": 3,
+      "flowerId": 3,
+    },
+  ],
+}
+`;
+
+exports[`INITIAL_STATE 1returns initial state 1`] = `
+Object {
+  "favorites": Array [],
+}
+`;
+
+exports[`INITIAL_STATE 2returns getFavoriteFlowersSuccess state 1`] = `
+Object {
+  "favorites": Array [
+    Object {
+      "favoriteId": 1,
+      "flowerId": 1,
+    },
+    Object {
+      "favoriteId": 2,
+      "flowerId": 2,
+    },
+    Object {
+      "favoriteId": 3,
+      "flowerId": 3,
+    },
+  ],
+}
+`;
+
+exports[`INITIAL_STATE 3returns favoriteFlowerSuccess state 1`] = `
+Object {
+  "favorites": Array [
+    Object {
+      "favoriteId": 1,
+      "flowerId": 1,
+    },
+  ],
+}
+`;
+
+exports[`INITIAL_STATE 4returns unfavoriteFlowerSuccess state 1`] = `
+Object {
+  "favorites": Array [],
+}
+`;

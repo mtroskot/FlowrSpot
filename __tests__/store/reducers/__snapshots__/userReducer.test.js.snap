@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`INITIAL_STATE 1returns initial state 1`] = `
+Object {
+  "authToken": null,
+  "email": null,
+  "firstName": null,
+  "id": null,
+  "lastName": null,
+}
+`;
+
+exports[`INITIAL_STATE 2returns loginUserSuccess state 1`] = `
+Object {
+  "authToken": "authToken",
+  "email": "email",
+  "firstName": "firstName",
+  "id": "id",
+  "lastName": "lastName",
+}
+`;
+
+exports[`LOGIN_USER_SUCCESS STATE 1returns initial state 1`] = `
+Object {
+  "authToken": "authToken",
+  "email": "email",
+  "firstName": "firstName",
+  "id": "id",
+  "lastName": "lastName",
+}
+`;
+
+exports[`LOGIN_USER_SUCCESS STATE 2returns loginUserSuccess state 1`] = `
+Object {
+  "authToken": "authToken2",
+  "email": "email2",
+  "firstName": "firstName2",
+  "id": "id2",
+  "lastName": "lastName2",
+}
+`;
