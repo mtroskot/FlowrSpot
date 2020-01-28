@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Image, Text, TouchableOpacity, View, ViewPropTypes } from 'react-native';
 
 const CustomButton = props => {
-  const { iconProps, tOpacityStyle, viewStyle, textStyle, iconStyle, text, onPress } = props;
+  const { iconProps, tOpacityStyle, viewStyle, textStyle, iconStyle, text, onPress, activeOpacity } = props;
   const buttonText = text ? <Text style={textStyle}>{text}</Text> : null;
 
   const buttonIcon = iconProps ? (
@@ -29,7 +29,7 @@ const CustomButton = props => {
   );
 
   return (
-    <TouchableOpacity style={tOpacityStyle} onPress={onPress}>
+    <TouchableOpacity style={tOpacityStyle} onPress={onPress} activeOpacity={activeOpacity}>
       {iconTextOrder}
     </TouchableOpacity>
   );
@@ -53,7 +53,12 @@ CustomButton.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   textStyle: PropTypes.object,
   iconStyle: ViewPropTypes.style,
-  onPress: PropTypes.func.isRequired
+  onPress: PropTypes.func.isRequired,
+  activeOpacity: PropTypes.number
+};
+
+CustomButton.defaultProps = {
+  activeOpacity: 0.2
 };
 
 export default React.memo(CustomButton);

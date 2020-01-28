@@ -1,6 +1,6 @@
 import React from 'react';
-import { FlatList, Text, TouchableOpacity, View } from 'react-native';
-import { Loader } from 'src/components';
+import { FlatList, Text, View } from 'react-native';
+import { CustomButton, Loader } from 'src/components';
 import SearchResultItem from 'src/screens/Home/SearchResults/SearchResultItem';
 import PropTypes from 'prop-types';
 import styles from 'src/screens/Home/SearchResults/styles';
@@ -43,9 +43,13 @@ const SearchResults = props => {
         />
       </View>
       <View>
-        <TouchableOpacity onPress={onClosePress} style={styles.closeButton} activeOpacity={0.95}>
-          <Text style={styles.closeText}>Close</Text>
-        </TouchableOpacity>
+        <CustomButton
+          onPress={onClosePress}
+          tOpacityStyle={styles.closeButton}
+          activeOpacity={0.95}
+          text={'Close'}
+          textStyle={styles.closeText}
+        />
       </View>
     </>
   );
