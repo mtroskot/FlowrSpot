@@ -6,7 +6,7 @@ const { rem } = dimensions;
 const Map = () => {
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
-      <Text style={{ ...fonts.style.normal, textAlign: 'center', fontSize: 16 * rem }}>Map</Text>
+      <Text style={{ ...fonts.ubuntu.normal.regular, textAlign: 'center', fontSize: 16 * rem }}>Map</Text>
     </View>
   );
 };
