@@ -6,7 +6,7 @@ const { rem } = dimensions;
 const Comments = () => {
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
-      <Text style={{ ...fonts.style.normal, textAlign: 'center', fontSize: 16 * rem }}>Comments</Text>
+      <Text style={{ ...fonts.ubuntu.normal.regular, textAlign: 'center', fontSize: 16 * rem }}>Comments</Text>
     </View>
   );
 };
