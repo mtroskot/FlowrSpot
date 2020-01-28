@@ -10,13 +10,16 @@ const styles = StyleSheet.create({
     marginRight: 15 * rem
   },
   menu: {
-    height: 5 * rem,
-    width: 25 * rem
+    height: 6 * rem,
+    width: 30 * rem
   },
   tabs: {
-    height: 31 * rem,
-    width: 31 * rem
+    height: 32 * rem,
+    width: 32 * rem
+  },
+  backArrow: {
+    height: 18 * rem,
+    width: 10 * rem
   }
 });
-
 export default styles;

@@ -21,6 +21,7 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { screenNames, stackNames } from 'src/constants/navigation';
 import titleLogo from 'src/assets/icons/title/title-logo.png';
 import menuDots from 'src/assets/icons/menu/menu-dots.png';
+import backArrow from 'src/assets/icons/back/backArrow.png';
 import { TabUtils } from 'src/utils';
 import styles from 'src/navigation/styles';
 import iconButtonStyles from 'src/components/IconButton/styles';
@@ -40,7 +41,8 @@ const HomeStack = createStackNavigator(
                 viewStyle={iconButtonStyles.rightButton}
                 imageStyle={iconButtonStyles.menu}
               />
-            )
+            ),
+            headerLeft: null
           },
           android: {
             headerLeft: (
@@ -95,7 +97,15 @@ const HomeStack = createStackNavigator(
     headerLayoutPreset: 'center',
     defaultNavigationOptions: {
       headerTitle: <Image source={titleLogo} style={styles.headerTitle} />,
-      headerStyle: styles.headerStyle
+      headerStyle: styles.headerStyle,
+      headerLeft: (
+        <IconButton
+          icon={backArrow}
+          onPress={NavigationService.goBack}
+          viewStyle={iconButtonStyles.leftButton}
+          imageStyle={iconButtonStyles.backArrow}
+        />
+      )
     }
   }
 );
