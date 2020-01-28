@@ -1,9 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Image, Text, TouchableOpacity, View, ViewPropTypes } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 const CustomButton = props => {
-  const { iconProps, tOpacityStyle, viewStyle, textStyle, iconStyle, text, onPress, activeOpacity } = props;
+  const {
+    iconProps,
+    gradientProps,
+    tOpacityStyle,
+    viewStyle,
+    textStyle,
+    iconStyle,
+    text,
+    onPress,
+    activeOpacity
+  } = props;
   const buttonText = text ? <Text style={textStyle}>{text}</Text> : null;
 
   const buttonIcon = iconProps ? (
@@ -28,6 +39,14 @@ const CustomButton = props => {
     </View>
   );
 
+  if (gradientProps) {
+    const { start, end, colors, style } = gradientProps;
+    return (
+      <TouchableOpacity onPress={onPress} activeOpacity={activeOpacity}>
+        <LinearGradient {...{ start, end, colors, style }}>{iconTextOrder}</LinearGradient>
+      </TouchableOpacity>
+    );
+  }
   return (
     <TouchableOpacity style={tOpacityStyle} onPress={onPress} activeOpacity={activeOpacity}>
       {iconTextOrder}
@@ -46,6 +65,18 @@ CustomButton.propTypes = {
     name: PropTypes.number.isRequired,
     iconStyle: PropTypes.object,
     rightSide: PropTypes.bool
+  }),
+  gradientProps: PropTypes.exact({
+    start: PropTypes.exact({
+      x: PropTypes.number.isRequired,
+      y: PropTypes.number.isRequired
+    }).isRequired,
+    end: PropTypes.exact({
+      x: PropTypes.number.isRequired,
+      y: PropTypes.number.isRequired
+    }).isRequired,
+    colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
   }),
   text: PropTypes.string,
   tOpacityStyle: ViewPropTypes.style,

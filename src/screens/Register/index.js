@@ -45,8 +45,13 @@ const Register = props => {
     <CustomButton
       onPress={submitForm}
       text="Create Account"
-      tOpacityStyle={loginStyles.loginButton}
       textStyle={loginStyles.loginButtonText}
+      gradientProps={{
+        start: { x: 0, y: 0 },
+        end: { x: 1, y: 0 },
+        colors: ['#EAA79E', '#ECBCB3'],
+        style: loginStyles.loginButton
+      }}
     />
   ) : (
     <Loader viewStyle={loginStyles.loaderStyle} />

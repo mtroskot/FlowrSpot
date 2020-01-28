@@ -24,8 +24,13 @@ const Login = props => {
     <CustomButton
       onPress={handleLogin}
       text="Login to your Account"
-      tOpacityStyle={styles.loginButton}
       textStyle={styles.loginButtonText}
+      gradientProps={{
+        start: { x: 0, y: 0 },
+        end: { x: 1, y: 0 },
+        colors: ['#EAA79E', '#ECBCB3'],
+        style: styles.loginButton
+      }}
     />
   ) : (
     <Loader viewStyle={styles.loaderStyle} />
