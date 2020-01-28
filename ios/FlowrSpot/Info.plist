@@ -55,6 +55,8 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Ubuntu-Light.ttf</string>
+		<string>Ubuntu-Medium.ttf</string>
 		<string>Ubuntu-Italic.ttf</string>
 		<string>Ubuntu-Regular.ttf</string>
 	</array>

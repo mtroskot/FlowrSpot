@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     padding: 10 * rem
   },
   messageText: {
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.regular,
     color: 'black',
     textAlign: 'center',
     fontSize: 14 * rem
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     borderRadius: 10 * rem
   },
   closeText: {
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.regular,
     textAlign: 'center',
     fontSize: 14 * rem
   }

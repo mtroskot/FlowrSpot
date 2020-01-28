@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     marginLeft: 10 * rem
   },
   cancelRegistration: {
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.regular,
     textAlign: 'center',
     marginTop: 25 * rem,
     marginBottom: 45 * rem,

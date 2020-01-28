@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     paddingLeft: 30 * rem
   },
   greetingText: {
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.regular,
     color: '#000',
     fontSize: 16 * rem,
     marginTop: 53 * rem
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   menuText: {
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.medium,
     color: '#949EA0',
     fontSize: 16 * rem
   },
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start'
   },
   menuButtonText: {
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.medium,
     color: 'white',
     fontSize: 16 * rem,
     paddingHorizontal: 27 * rem,

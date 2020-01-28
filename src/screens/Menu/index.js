@@ -11,6 +11,13 @@ import styles from 'src/screens/Menu/styles';
 import { getFullUserName } from 'src/store/selectors';
 import MenuList from 'src/screens/Menu/MenuList';
 
+const gradientProps = () => ({
+  start: { x: 0, y: 0 },
+  end: { x: 1, y: 0 },
+  colors: ['#EAA79E', '#ECBCB3'],
+  style: styles.menuButtonView
+});
+
 const Menu = props => {
   const openMenuEntry = menuId => {
     NavigationService.navigate(menuId);
@@ -33,8 +40,8 @@ const Menu = props => {
           <CustomButton
             text={'New Account'}
             onPress={() => NavigationService.navigate(screenNames.REGISTER)}
-            tOpacityStyle={styles.menuButtonView}
             textStyle={styles.menuButtonText}
+            gradientProps={gradientProps()}
           />
         ) : (
           <CustomButton

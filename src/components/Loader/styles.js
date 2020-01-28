@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   text: {
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.regular,
     textAlign: 'center',
     fontSize: 16 * rem
   }

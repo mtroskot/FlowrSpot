@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     fontSize: 13 * rem
   },
   defaultInput: {
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.regular,
     fontSize: 16 * rem,
     color: '#334144',
     padding: 0

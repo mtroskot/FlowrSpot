@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
   textInputStyle: {
     flex: 1,
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.light,
     fontSize: 14 * rem,
     marginLeft: 20 * rem
   },

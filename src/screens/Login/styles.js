@@ -10,8 +10,9 @@ const styles = StyleSheet.create({
     marginVertical: 45 * rem
   },
   headerText: {
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.medium,
     fontSize: 22 * rem,
+    color: '#334144',
     textAlign: 'center'
   },
   loginButton: {
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
     marginTop: 60 * rem
   },
   loginButtonText: {
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.medium,
     marginVertical: 17 * rem,
     fontSize: 16 * rem,
     textAlign: 'center',

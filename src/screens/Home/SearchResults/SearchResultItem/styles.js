@@ -24,12 +24,12 @@ const styles = StyleSheet.create({
     flex: 0.8
   },
   mainContentText: {
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.regular,
     fontSize: 16 * rem,
     color: '#000'
   },
   contentText: {
-    ...fonts.style.italic,
+    ...fonts.ubuntu.italic.regular,
     fontSize: 12 * rem,
     marginTop: 5 * rem,
     color: '#666666'

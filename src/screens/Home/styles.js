@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   headerTitle: {
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.light,
     color: '#fff',
     textAlign: 'center',
     lineHeight: 29 * rem,
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 64 * rem
   },
   headerSubTitle: {
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.light,
     color: '#fff',
     textAlign: 'center',
     marginTop: 25 * rem,

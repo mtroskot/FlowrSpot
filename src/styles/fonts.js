@@ -1,12 +1,22 @@
-const style = {
+const ubuntu = {
   normal: {
-    fontFamily: 'Ubuntu-Regular'
+    light: {
+      fontFamily: 'Ubuntu-Light'
+    },
+    regular: {
+      fontFamily: 'Ubuntu-Regular'
+    },
+    medium: {
+      fontFamily: 'Ubuntu-Medium'
+    }
   },
   italic: {
-    fontFamily: 'Ubuntu-Italic'
+    regular: {
+      fontFamily: 'Ubuntu-Italic'
+    }
   }
 };
 
 export default {
-  style
+  ubuntu
 };

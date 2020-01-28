@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     marginBottom: 16 * rem
   },
   title: {
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.regular,
     fontSize: 18 * rem,
     color: '#fff',
     textAlign: 'center',
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     marginBottom: 9 * rem
   },
   subTitle: {
-    ...fonts.style.italic,
+    ...fonts.ubuntu.italic.regular,
     fontSize: 11 * rem,
     color: '#fff',
     textAlign: 'center',
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   additionalInfo: {
-    ...fonts.style.normal,
+    ...fonts.ubuntu.normal.regular,
     color: '#fff',
     fontSize: 11 * rem,
     paddingHorizontal: 12 * rem,
