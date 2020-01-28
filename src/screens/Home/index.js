@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { favoriteFlower, unfavoriteFlower } from 'src/store/actions/flowerActions';
 import { checkIfUserAuthenticated, getUpdatingItemId } from 'src/store/selectors';
 import { ActivityIndicator, FlatList, ImageBackground, RefreshControl, Text, View } from 'react-native';
-import { Error404, KeyboardAvoidAndDismissView, Loader, SearchBar } from 'src/components';
+import { Error404, Loader, SearchBar } from 'src/components';
 import SearchResults from 'src/screens/Home/SearchResults';
 import FlowerListItem from 'src/screens/Home/FlowerListItem';
 import { ApiService } from 'src/services';
@@ -163,21 +163,19 @@ const Home = props => {
     <View style={styles.container}>
       <FlatList
         ListHeaderComponent={
-          <KeyboardAvoidAndDismissView>
-            <ImageBackground source={homeBackground} style={styles.imageContainer}>
-              <Text style={styles.headerTitle}>Discover flowers around you</Text>
-              <Text style={styles.headerSubTitle}>Explore between more than 8.427 sightings</Text>
-              <View>
-                <SearchBar
-                  searchInput={searchInput}
-                  handleInput={handleInput}
-                  clearInput={() => setSearchInput('')}
-                  placeholder="Looking for something specific?"
-                  viewStyle={styles.searchBarView}
-                />
-              </View>
-            </ImageBackground>
-          </KeyboardAvoidAndDismissView>
+          <ImageBackground source={homeBackground} style={styles.imageContainer}>
+            <Text style={styles.headerTitle}>Discover flowers around you</Text>
+            <Text style={styles.headerSubTitle}>Explore between more than 8.427 sightings</Text>
+            <View>
+              <SearchBar
+                searchInput={searchInput}
+                handleInput={handleInput}
+                clearInput={() => setSearchInput('')}
+                placeholder="Looking for something specific?"
+                viewStyle={styles.searchBarView}
+              />
+            </View>
+          </ImageBackground>
         }
         ListFooterComponent={searchingFlatList && flowerList.length > 0 ? <ActivityIndicator size={'large'} /> : null}
         ListEmptyComponent={error ? <Error404 /> : <Loader text={'Loading flower list'} />}
@@ -198,9 +196,9 @@ const Home = props => {
           />
         )}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
-        // scrollEnabled={!showSearchResults}
-        scrollEnabled={true}
+        scrollEnabled={!showSearchResults}
         onEndReached={onEndReached}
+        keyboardShouldPersistTaps={'handled'}
         onEndReachedThreshold={0.5}
         onMomentumScrollEnd={setOffset}
         onScrollEndDrag={setOffset}
