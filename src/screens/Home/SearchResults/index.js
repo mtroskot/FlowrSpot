@@ -1,13 +1,10 @@
 import React from 'react';
 import { FlatList, Text, View } from 'react-native';
-import { CustomButton, Loader } from 'src/components';
+import { CustomButton, ListItemSeparator, Loader } from 'src/components';
 import SearchResultItem from 'src/screens/Home/SearchResults/SearchResultItem';
 import PropTypes from 'prop-types';
 import styles from 'src/screens/Home/SearchResults/styles';
 
-function separator() {
-  return <View style={styles.separator} />;
-}
 const SearchResults = props => {
   const { searchData, isSearching, onResultPress, onClosePress } = props;
   const { searchResults, message } = searchData;
@@ -32,7 +29,7 @@ const SearchResults = props => {
       <View>
         <FlatList
           data={searchResults}
-          ItemSeparatorComponent={separator}
+          ItemSeparatorComponent={ListItemSeparator}
           renderItem={({ item }) => {
             const { id, name, latin_name, profile_picture } = item;
             return <SearchResultItem {...{ id, name, latin_name, profile_picture, onResultPress }} />;

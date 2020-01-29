@@ -7,11 +7,6 @@ const styles = StyleSheet.create({
     borderRadius: 10 * rem,
     overflow: 'hidden'
   },
-  separator: {
-    borderColor: '#cecece',
-    borderWidth: 1,
-    height: 1
-  },
   triangle: {
     marginLeft: 25 * rem,
     width: 0,
