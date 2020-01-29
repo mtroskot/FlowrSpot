@@ -1,0 +1,3449 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home wrapper renders FlatList renderItem 1`] = `
+<Memo(FlowerListItem)
+  arrayLength={0}
+  favoriteFlowerList={Array []}
+  isAuthenticated={true}
+  onFavoritePress={[Function]}
+  onFlowerPress={[Function]}
+  onUnfavoritePress={[Function]}
+/>
+`;
+
+exports[`Home wrapper renders Home wrapper 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <FlatList
+    ListEmptyComponent={
+      <Memo(ListEmpty)
+        error={false}
+        text="Loading flower list"
+      />
+    }
+    ListFooterComponent={
+      <Memo(ListFooterLoader)
+        flatListLoading={false}
+        listLength={0}
+      />
+    }
+    ListHeaderComponent={
+      <Memo(ListHeader)
+        clearInput={[Function]}
+        handleInput={[Function]}
+        headerSubtitle="Explore between more than 8.427 sightings"
+        headerTitle="Discover flowers around you"
+        placeholder="Looking for something specific?"
+        searchInput=""
+      />
+    }
+    contentContainerStyle={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+    data={Array []}
+    disableVirtualization={false}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    keyboardShouldPersistTaps="handled"
+    maxToRenderPerBatch={10}
+    numColumns={2}
+    onEndReached={[Function]}
+    onEndReachedThreshold={0.5}
+    onMomentumScrollEnd={[Function]}
+    onScrollEndDrag={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEnabled={true}
+    scrollEventThrottle={50}
+    updateCellsBatchingPeriod={50}
+    windowSize={21}
+  />
+</View>
+`;
+
+exports[`integration calling handleInput should trigger searchFlowers, searchFlowers error 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    ListEmptyComponent={
+      <Memo(ListEmpty)
+        error={true}
+        text="Loading flower list"
+      />
+    }
+    ListFooterComponent={
+      <Memo(ListFooterLoader)
+        flatListLoading={false}
+        listLength={0}
+      />
+    }
+    ListHeaderComponent={
+      <Memo(ListHeader)
+        clearInput={[Function]}
+        handleInput={[Function]}
+        headerSubtitle="Explore between more than 8.427 sightings"
+        headerTitle="Discover flowers around you"
+        placeholder="Looking for something specific?"
+        searchInput="abc"
+      />
+    }
+    contentContainerStyle={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+    data={Array []}
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    keyboardShouldPersistTaps="handled"
+    maxToRenderPerBatch={10}
+    numColumns={2}
+    onContentSizeChange={[Function]}
+    onEndReached={[Function]}
+    onEndReachedThreshold={0.5}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEnabled={false}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <RCTRefreshControl />
+    <View>
+      <View
+        onLayout={[Function]}
+      >
+        <View
+          accessibilityIgnoresInvertColors={true}
+          style={
+            Object {
+              "alignItems": "center",
+              "width": "100%",
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../src/assets/images/background/home-background.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "height": undefined,
+                  "width": "100%",
+                },
+                undefined,
+              ]
+            }
+          />
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 51.315789473684205,
+                "lineHeight": 57.23684210526316,
+                "marginTop": 118.42105263157895,
+                "paddingHorizontal": 126.3157894736842,
+                "textAlign": "center",
+              }
+            }
+          >
+            Discover flowers around you
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 31.57894736842105,
+                "lineHeight": 33.55263157894737,
+                "marginTop": 49.34210526315789,
+                "opacity": 0.7,
+                "textAlign": "center",
+              }
+            }
+          >
+            Explore between more than 8.427 sightings
+          </Text>
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "white",
+                    "borderColor": "black",
+                    "borderRadius": 5.921052631578947,
+                    "borderWidth": 1.9736842105263157,
+                    "flexDirection": "row",
+                    "height": 94.73684210526315,
+                    "width": "88%",
+                  },
+                  Object {
+                    "marginBottom": 153.94736842105263,
+                    "marginTop": 39.473684210526315,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                onChangeText={[Function]}
+                placeholder="Looking for something specific?"
+                placeholderTextColor="#949EA0"
+                rejectResponderTermination={true}
+                style={
+                  Object {
+                    "flex": 1,
+                    "fontFamily": "Ubuntu-Light",
+                    "fontSize": 27.63157894736842,
+                    "marginLeft": 39.473684210526315,
+                  }
+                }
+                underlineColorAndroid="transparent"
+                value="abc"
+              />
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 20,
+                    "left": 20,
+                    "right": 20,
+                    "top": 20,
+                  }
+                }
+                isTVSelectable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../src/assets/icons/clear/clear.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "marginHorizontal": 39.473684210526315,
+                        "tintColor": "#E9B2A9",
+                      },
+                      Object {
+                        "height": 29.605263157894736,
+                        "width": 29.605263157894736,
+                      },
+                    ]
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/assets/images/emoji/sadFace.png",
+            }
+          }
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "height": 394.7368421052631,
+              "width": 394.7368421052631,
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "fontSize": 39.473684210526315,
+              "textAlign": "center",
+            }
+          }
+        >
+          Oops Something went wrong
+        </Text>
+      </View>
+      <View
+        onLayout={[Function]}
+      />
+    </View>
+  </RCTScrollView>
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "height": 400.2,
+          "position": "absolute",
+          "top": 444.07894736842104,
+          "width": "90%",
+        },
+        Object {
+          "top": 444.07894736842104,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderBottomColor": "white",
+          "borderBottomWidth": 31.57894736842105,
+          "borderLeftColor": "transparent",
+          "borderLeftWidth": 15.789473684210526,
+          "borderRightColor": "transparent",
+          "borderRightWidth": 15.789473684210526,
+          "borderStyle": "solid",
+          "height": 0,
+          "marginLeft": 49.34210526315789,
+          "width": 0,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderRadius": 19.736842105263158,
+          "padding": 39.473684210526315,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "Ubuntu-Regular",
+            "fontSize": 27.63157894736842,
+            "textAlign": "center",
+          }
+        }
+      >
+        Something went wrong
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`integration calling handleInput should trigger searchFlowers, searchFlowers success, no results found 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    ListEmptyComponent={
+      <Memo(ListEmpty)
+        error={true}
+        text="Loading flower list"
+      />
+    }
+    ListFooterComponent={
+      <Memo(ListFooterLoader)
+        flatListLoading={false}
+        listLength={0}
+      />
+    }
+    ListHeaderComponent={
+      <Memo(ListHeader)
+        clearInput={[Function]}
+        handleInput={[Function]}
+        headerSubtitle="Explore between more than 8.427 sightings"
+        headerTitle="Discover flowers around you"
+        placeholder="Looking for something specific?"
+        searchInput="abc"
+      />
+    }
+    contentContainerStyle={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+    data={Array []}
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    keyboardShouldPersistTaps="handled"
+    maxToRenderPerBatch={10}
+    numColumns={2}
+    onContentSizeChange={[Function]}
+    onEndReached={[Function]}
+    onEndReachedThreshold={0.5}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEnabled={false}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <RCTRefreshControl />
+    <View>
+      <View
+        onLayout={[Function]}
+      >
+        <View
+          accessibilityIgnoresInvertColors={true}
+          style={
+            Object {
+              "alignItems": "center",
+              "width": "100%",
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../src/assets/images/background/home-background.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "height": undefined,
+                  "width": "100%",
+                },
+                undefined,
+              ]
+            }
+          />
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 51.315789473684205,
+                "lineHeight": 57.23684210526316,
+                "marginTop": 118.42105263157895,
+                "paddingHorizontal": 126.3157894736842,
+                "textAlign": "center",
+              }
+            }
+          >
+            Discover flowers around you
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 31.57894736842105,
+                "lineHeight": 33.55263157894737,
+                "marginTop": 49.34210526315789,
+                "opacity": 0.7,
+                "textAlign": "center",
+              }
+            }
+          >
+            Explore between more than 8.427 sightings
+          </Text>
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "white",
+                    "borderColor": "black",
+                    "borderRadius": 5.921052631578947,
+                    "borderWidth": 1.9736842105263157,
+                    "flexDirection": "row",
+                    "height": 94.73684210526315,
+                    "width": "88%",
+                  },
+                  Object {
+                    "marginBottom": 153.94736842105263,
+                    "marginTop": 39.473684210526315,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                onChangeText={[Function]}
+                placeholder="Looking for something specific?"
+                placeholderTextColor="#949EA0"
+                rejectResponderTermination={true}
+                style={
+                  Object {
+                    "flex": 1,
+                    "fontFamily": "Ubuntu-Light",
+                    "fontSize": 27.63157894736842,
+                    "marginLeft": 39.473684210526315,
+                  }
+                }
+                underlineColorAndroid="transparent"
+                value="abc"
+              />
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 20,
+                    "left": 20,
+                    "right": 20,
+                    "top": 20,
+                  }
+                }
+                isTVSelectable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../src/assets/icons/clear/clear.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "marginHorizontal": 39.473684210526315,
+                        "tintColor": "#E9B2A9",
+                      },
+                      Object {
+                        "height": 29.605263157894736,
+                        "width": 29.605263157894736,
+                      },
+                    ]
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/assets/images/emoji/sadFace.png",
+            }
+          }
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "height": 394.7368421052631,
+              "width": 394.7368421052631,
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "fontSize": 39.473684210526315,
+              "textAlign": "center",
+            }
+          }
+        >
+          Oops Something went wrong
+        </Text>
+      </View>
+      <View
+        onLayout={[Function]}
+      />
+    </View>
+  </RCTScrollView>
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "height": 400.2,
+          "position": "absolute",
+          "top": 444.07894736842104,
+          "width": "90%",
+        },
+        Object {
+          "top": 444.07894736842104,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderBottomColor": "white",
+          "borderBottomWidth": 31.57894736842105,
+          "borderLeftColor": "transparent",
+          "borderLeftWidth": 15.789473684210526,
+          "borderRightColor": "transparent",
+          "borderRightWidth": 15.789473684210526,
+          "borderStyle": "solid",
+          "height": 0,
+          "marginLeft": 49.34210526315789,
+          "width": 0,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderRadius": 19.736842105263158,
+          "padding": 39.473684210526315,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontFamily": "Ubuntu-Regular",
+            "fontSize": 27.63157894736842,
+            "textAlign": "center",
+          }
+        }
+      >
+        No Results Found
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`integration calling handleInput should trigger searchFlowers, searchFlowers success, search results shown, calling close should hide SearchResults, typing the same input again should show search results without calling the api  1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    ListEmptyComponent={
+      <Memo(ListEmpty)
+        error={true}
+        text="Loading flower list"
+      />
+    }
+    ListFooterComponent={
+      <Memo(ListFooterLoader)
+        flatListLoading={false}
+        listLength={0}
+      />
+    }
+    ListHeaderComponent={
+      <Memo(ListHeader)
+        clearInput={[Function]}
+        handleInput={[Function]}
+        headerSubtitle="Explore between more than 8.427 sightings"
+        headerTitle="Discover flowers around you"
+        placeholder="Looking for something specific?"
+        searchInput="abc"
+      />
+    }
+    contentContainerStyle={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+    data={Array []}
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    keyboardShouldPersistTaps="handled"
+    maxToRenderPerBatch={10}
+    numColumns={2}
+    onContentSizeChange={[Function]}
+    onEndReached={[Function]}
+    onEndReachedThreshold={0.5}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEnabled={false}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <RCTRefreshControl />
+    <View>
+      <View
+        onLayout={[Function]}
+      >
+        <View
+          accessibilityIgnoresInvertColors={true}
+          style={
+            Object {
+              "alignItems": "center",
+              "width": "100%",
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../src/assets/images/background/home-background.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "height": undefined,
+                  "width": "100%",
+                },
+                undefined,
+              ]
+            }
+          />
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 51.315789473684205,
+                "lineHeight": 57.23684210526316,
+                "marginTop": 118.42105263157895,
+                "paddingHorizontal": 126.3157894736842,
+                "textAlign": "center",
+              }
+            }
+          >
+            Discover flowers around you
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 31.57894736842105,
+                "lineHeight": 33.55263157894737,
+                "marginTop": 49.34210526315789,
+                "opacity": 0.7,
+                "textAlign": "center",
+              }
+            }
+          >
+            Explore between more than 8.427 sightings
+          </Text>
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "white",
+                    "borderColor": "black",
+                    "borderRadius": 5.921052631578947,
+                    "borderWidth": 1.9736842105263157,
+                    "flexDirection": "row",
+                    "height": 94.73684210526315,
+                    "width": "88%",
+                  },
+                  Object {
+                    "marginBottom": 153.94736842105263,
+                    "marginTop": 39.473684210526315,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                onChangeText={[Function]}
+                placeholder="Looking for something specific?"
+                placeholderTextColor="#949EA0"
+                rejectResponderTermination={true}
+                style={
+                  Object {
+                    "flex": 1,
+                    "fontFamily": "Ubuntu-Light",
+                    "fontSize": 27.63157894736842,
+                    "marginLeft": 39.473684210526315,
+                  }
+                }
+                underlineColorAndroid="transparent"
+                value="abc"
+              />
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 20,
+                    "left": 20,
+                    "right": 20,
+                    "top": 20,
+                  }
+                }
+                isTVSelectable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../src/assets/icons/clear/clear.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "marginHorizontal": 39.473684210526315,
+                        "tintColor": "#E9B2A9",
+                      },
+                      Object {
+                        "height": 29.605263157894736,
+                        "width": 29.605263157894736,
+                      },
+                    ]
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/assets/images/emoji/sadFace.png",
+            }
+          }
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "height": 394.7368421052631,
+              "width": 394.7368421052631,
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "fontSize": 39.473684210526315,
+              "textAlign": "center",
+            }
+          }
+        >
+          Oops Something went wrong
+        </Text>
+      </View>
+      <View
+        onLayout={[Function]}
+      />
+    </View>
+  </RCTScrollView>
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "height": 400.2,
+          "position": "absolute",
+          "top": 444.07894736842104,
+          "width": "90%",
+        },
+        Object {
+          "top": 444.07894736842104,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderBottomColor": "white",
+          "borderBottomWidth": 31.57894736842105,
+          "borderLeftColor": "transparent",
+          "borderLeftWidth": 15.789473684210526,
+          "borderRightColor": "transparent",
+          "borderRightWidth": 15.789473684210526,
+          "borderStyle": "solid",
+          "height": 0,
+          "marginLeft": 49.34210526315789,
+          "width": 0,
+        }
+      }
+    />
+    <View>
+      <RCTScrollView
+        ItemSeparatorComponent={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "compare": null,
+            "type": [Function],
+          }
+        }
+        bounces={false}
+        contentContainerStyle={
+          Object {
+            "borderRadius": 19.736842105263158,
+            "overflow": "hidden",
+          }
+        }
+        data={
+          Array [
+            Object {
+              "id": "id",
+              "latin_name": "latin_name",
+              "name": "name",
+              "profile_picture": "profile_picture",
+              "sightings": "sightings",
+            },
+          ]
+        }
+        disableVirtualization={false}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        horizontal={false}
+        initialNumToRender={10}
+        keyExtractor={[Function]}
+        maxToRenderPerBatch={10}
+        numColumns={1}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={2}
+        onLayout={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        scrollEventThrottle={50}
+        stickyHeaderIndices={Array []}
+        updateCellsBatchingPeriod={50}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={21}
+      >
+        <View>
+          <View
+            onLayout={[Function]}
+            style={null}
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              isTVSelectable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "flexDirection": "row",
+                  "opacity": 1,
+                  "padding": 9.868421052631579,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "flex": 0.2,
+                    "paddingLeft": 39.473684210526315,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https:profile_picture",
+                    }
+                  }
+                  style={
+                    Object {
+                      "borderRadius": 49.34210526315789,
+                      "height": 98.68421052631578,
+                      "resizeMode": "cover",
+                      "width": 98.68421052631578,
+                    }
+                  }
+                />
+              </View>
+              <View
+                style={
+                  Object {
+                    "flex": 0.8,
+                    "justifyContent": "center",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#000",
+                      "fontFamily": "Ubuntu-Regular",
+                      "fontSize": 31.57894736842105,
+                    }
+                  }
+                >
+                  name
+                </Text>
+                <Text
+                  style={
+                    Object {
+                      "color": "#666666",
+                      "fontFamily": "Ubuntu-Italic",
+                      "fontSize": 23.684210526315788,
+                      "marginTop": 9.868421052631579,
+                    }
+                  }
+                >
+                  latin_name
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+    <View>
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#e8e8e8",
+            "borderRadius": 19.736842105263158,
+            "opacity": 1,
+            "padding": 19.736842105263158,
+            "position": "absolute",
+            "width": "100%",
+          }
+        }
+      >
+        <View>
+          <Text
+            style={
+              Object {
+                "fontFamily": "Ubuntu-Regular",
+                "fontSize": 27.63157894736842,
+                "textAlign": "center",
+              }
+            }
+          >
+            Close
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`integration displaying loader before onDidMount fetchFlowers error, after error should display ListEmptyComponent 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    ListEmptyComponent={
+      <Memo(ListEmpty)
+        error={true}
+        text="Loading flower list"
+      />
+    }
+    ListFooterComponent={
+      <Memo(ListFooterLoader)
+        flatListLoading={false}
+        listLength={0}
+      />
+    }
+    ListHeaderComponent={
+      <Memo(ListHeader)
+        clearInput={[Function]}
+        handleInput={[Function]}
+        headerSubtitle="Explore between more than 8.427 sightings"
+        headerTitle="Discover flowers around you"
+        placeholder="Looking for something specific?"
+        searchInput=""
+      />
+    }
+    contentContainerStyle={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+    data={Array []}
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    keyboardShouldPersistTaps="handled"
+    maxToRenderPerBatch={10}
+    numColumns={2}
+    onContentSizeChange={[Function]}
+    onEndReached={[Function]}
+    onEndReachedThreshold={0.5}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEnabled={true}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <RCTRefreshControl />
+    <View>
+      <View
+        onLayout={[Function]}
+      >
+        <View
+          accessibilityIgnoresInvertColors={true}
+          style={
+            Object {
+              "alignItems": "center",
+              "width": "100%",
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../src/assets/images/background/home-background.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "height": undefined,
+                  "width": "100%",
+                },
+                undefined,
+              ]
+            }
+          />
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 51.315789473684205,
+                "lineHeight": 57.23684210526316,
+                "marginTop": 118.42105263157895,
+                "paddingHorizontal": 126.3157894736842,
+                "textAlign": "center",
+              }
+            }
+          >
+            Discover flowers around you
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 31.57894736842105,
+                "lineHeight": 33.55263157894737,
+                "marginTop": 49.34210526315789,
+                "opacity": 0.7,
+                "textAlign": "center",
+              }
+            }
+          >
+            Explore between more than 8.427 sightings
+          </Text>
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "white",
+                    "borderColor": "black",
+                    "borderRadius": 5.921052631578947,
+                    "borderWidth": 1.9736842105263157,
+                    "flexDirection": "row",
+                    "height": 94.73684210526315,
+                    "width": "88%",
+                  },
+                  Object {
+                    "marginBottom": 153.94736842105263,
+                    "marginTop": 39.473684210526315,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                onChangeText={[Function]}
+                placeholder="Looking for something specific?"
+                placeholderTextColor="#949EA0"
+                rejectResponderTermination={true}
+                style={
+                  Object {
+                    "flex": 1,
+                    "fontFamily": "Ubuntu-Light",
+                    "fontSize": 27.63157894736842,
+                    "marginLeft": 39.473684210526315,
+                  }
+                }
+                underlineColorAndroid="transparent"
+                value=""
+              />
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 20,
+                    "left": 20,
+                    "right": 20,
+                    "top": 20,
+                  }
+                }
+                isTVSelectable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../src/assets/icons/search/search.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "marginHorizontal": 39.473684210526315,
+                        "tintColor": "#E9B2A9",
+                      },
+                      Object {
+                        "height": 39.473684210526315,
+                        "width": 39.473684210526315,
+                      },
+                    ]
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/assets/images/emoji/sadFace.png",
+            }
+          }
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "height": 394.7368421052631,
+              "width": 394.7368421052631,
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "fontSize": 39.473684210526315,
+              "textAlign": "center",
+            }
+          }
+        >
+          Oops Something went wrong
+        </Text>
+      </View>
+      <View
+        onLayout={[Function]}
+      />
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`integration displaying loader before onDidMount fetchFlowers error, refreshing FlatList fetchFlowers success 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    ListEmptyComponent={
+      <Memo(ListEmpty)
+        error={true}
+        text="Loading flower list"
+      />
+    }
+    ListFooterComponent={
+      <Memo(ListFooterLoader)
+        flatListLoading={false}
+        listLength={1}
+      />
+    }
+    ListHeaderComponent={
+      <Memo(ListHeader)
+        clearInput={[Function]}
+        handleInput={[Function]}
+        headerSubtitle="Explore between more than 8.427 sightings"
+        headerTitle="Discover flowers around you"
+        placeholder="Looking for something specific?"
+        searchInput=""
+      />
+    }
+    contentContainerStyle={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "id": "id",
+          "latin_name": "latin_name",
+          "name": "name",
+          "profile_picture": "profile_picture",
+          "sightings": "sightings",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    keyboardShouldPersistTaps="handled"
+    maxToRenderPerBatch={10}
+    numColumns={2}
+    onContentSizeChange={[Function]}
+    onEndReached={[Function]}
+    onEndReachedThreshold={0.5}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEnabled={true}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <RCTRefreshControl />
+    <View>
+      <View
+        onLayout={[Function]}
+      >
+        <View
+          accessibilityIgnoresInvertColors={true}
+          style={
+            Object {
+              "alignItems": "center",
+              "width": "100%",
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../src/assets/images/background/home-background.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "height": undefined,
+                  "width": "100%",
+                },
+                undefined,
+              ]
+            }
+          />
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 51.315789473684205,
+                "lineHeight": 57.23684210526316,
+                "marginTop": 118.42105263157895,
+                "paddingHorizontal": 126.3157894736842,
+                "textAlign": "center",
+              }
+            }
+          >
+            Discover flowers around you
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 31.57894736842105,
+                "lineHeight": 33.55263157894737,
+                "marginTop": 49.34210526315789,
+                "opacity": 0.7,
+                "textAlign": "center",
+              }
+            }
+          >
+            Explore between more than 8.427 sightings
+          </Text>
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "white",
+                    "borderColor": "black",
+                    "borderRadius": 5.921052631578947,
+                    "borderWidth": 1.9736842105263157,
+                    "flexDirection": "row",
+                    "height": 94.73684210526315,
+                    "width": "88%",
+                  },
+                  Object {
+                    "marginBottom": 153.94736842105263,
+                    "marginTop": 39.473684210526315,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                onChangeText={[Function]}
+                placeholder="Looking for something specific?"
+                placeholderTextColor="#949EA0"
+                rejectResponderTermination={true}
+                style={
+                  Object {
+                    "flex": 1,
+                    "fontFamily": "Ubuntu-Light",
+                    "fontSize": 27.63157894736842,
+                    "marginLeft": 39.473684210526315,
+                  }
+                }
+                underlineColorAndroid="transparent"
+                value=""
+              />
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 20,
+                    "left": 20,
+                    "right": 20,
+                    "top": 20,
+                  }
+                }
+                isTVSelectable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../src/assets/icons/search/search.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "marginHorizontal": 39.473684210526315,
+                        "tintColor": "#E9B2A9",
+                      },
+                      Object {
+                        "height": 39.473684210526315,
+                        "width": 39.473684210526315,
+                      },
+                    ]
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 5.921052631578947,
+                  "flex": 0.5,
+                  "marginTop": 23.684210526315788,
+                  "overflow": "hidden",
+                },
+                Object {
+                  "marginBottom": 23.684210526315788,
+                  "marginLeft": 23.684210526315788,
+                  "marginRight": 47.368421052631575,
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              isTVSelectable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                accessibilityIgnoresInvertColors={true}
+                style={
+                  Object {
+                    "height": 394.7368421052631,
+                    "justifyContent": "space-between",
+                    "width": "100%",
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https:profile_picture",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": 394.7368421052631,
+                        "width": "100%",
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "flex-end",
+                      "borderRadius": 29.605263157894736,
+                      "height": 59.21052631578947,
+                      "margin": 31.57894736842105,
+                      "width": 59.21052631578947,
+                    }
+                  }
+                >
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 20,
+                        "left": 20,
+                        "right": 20,
+                        "top": 20,
+                      }
+                    }
+                    isTVSelectable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "white",
+                        "borderRadius": 29.605263157894736,
+                        "height": 59.21052631578947,
+                        "justifyContent": "center",
+                        "opacity": 1,
+                        "width": 59.21052631578947,
+                      }
+                    }
+                  >
+                    <Image
+                      source={
+                        Object {
+                          "testUri": "../../../src/assets/icons/star/star.png",
+                        }
+                      }
+                      style={
+                        Array [
+                          Object {
+                            "height": 23.684210526315788,
+                            "width": 23.684210526315788,
+                          },
+                          Object {
+                            "tintColor": null,
+                          },
+                        ]
+                      }
+                    />
+                  </View>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "justifyContent": "flex-end",
+                      "marginBottom": 31.57894736842105,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "#fff",
+                        "fontFamily": "Ubuntu-Regular",
+                        "fontSize": 35.526315789473685,
+                        "marginBottom": 17.763157894736842,
+                        "marginTop": 19.736842105263158,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    name
+                  </Text>
+                  <Text
+                    style={
+                      Object {
+                        "color": "#fff",
+                        "fontFamily": "Ubuntu-Italic",
+                        "fontSize": 21.710526315789473,
+                        "marginBottom": 29.605263157894736,
+                        "opacity": 0.7,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    latin_name
+                  </Text>
+                  <View
+                    style={
+                      Object {
+                        "alignSelf": "center",
+                        "backgroundColor": "black",
+                        "borderRadius": 31.57894736842105,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#fff",
+                          "fontFamily": "Ubuntu-Regular",
+                          "fontSize": 21.710526315789473,
+                          "paddingHorizontal": 23.684210526315788,
+                          "paddingVertical": 11.842105263157894,
+                          "textAlign": "center",
+                        }
+                      }
+                    >
+                      sightings
+                       sightings
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+      />
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`integration displaying loader before onDidMount fetchFlowers success, after success should display renderedItems 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    ListEmptyComponent={
+      <Memo(ListEmpty)
+        error={false}
+        text="Loading flower list"
+      />
+    }
+    ListFooterComponent={
+      <Memo(ListFooterLoader)
+        flatListLoading={false}
+        listLength={1}
+      />
+    }
+    ListHeaderComponent={
+      <Memo(ListHeader)
+        clearInput={[Function]}
+        handleInput={[Function]}
+        headerSubtitle="Explore between more than 8.427 sightings"
+        headerTitle="Discover flowers around you"
+        placeholder="Looking for something specific?"
+        searchInput=""
+      />
+    }
+    contentContainerStyle={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "id": "id",
+          "latin_name": "latin_name",
+          "name": "name",
+          "profile_picture": "profile_picture",
+          "sightings": "sightings",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    keyboardShouldPersistTaps="handled"
+    maxToRenderPerBatch={10}
+    numColumns={2}
+    onContentSizeChange={[Function]}
+    onEndReached={[Function]}
+    onEndReachedThreshold={0.5}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEnabled={true}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <RCTRefreshControl />
+    <View>
+      <View
+        onLayout={[Function]}
+      >
+        <View
+          accessibilityIgnoresInvertColors={true}
+          style={
+            Object {
+              "alignItems": "center",
+              "width": "100%",
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../src/assets/images/background/home-background.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "height": undefined,
+                  "width": "100%",
+                },
+                undefined,
+              ]
+            }
+          />
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 51.315789473684205,
+                "lineHeight": 57.23684210526316,
+                "marginTop": 118.42105263157895,
+                "paddingHorizontal": 126.3157894736842,
+                "textAlign": "center",
+              }
+            }
+          >
+            Discover flowers around you
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 31.57894736842105,
+                "lineHeight": 33.55263157894737,
+                "marginTop": 49.34210526315789,
+                "opacity": 0.7,
+                "textAlign": "center",
+              }
+            }
+          >
+            Explore between more than 8.427 sightings
+          </Text>
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "white",
+                    "borderColor": "black",
+                    "borderRadius": 5.921052631578947,
+                    "borderWidth": 1.9736842105263157,
+                    "flexDirection": "row",
+                    "height": 94.73684210526315,
+                    "width": "88%",
+                  },
+                  Object {
+                    "marginBottom": 153.94736842105263,
+                    "marginTop": 39.473684210526315,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                onChangeText={[Function]}
+                placeholder="Looking for something specific?"
+                placeholderTextColor="#949EA0"
+                rejectResponderTermination={true}
+                style={
+                  Object {
+                    "flex": 1,
+                    "fontFamily": "Ubuntu-Light",
+                    "fontSize": 27.63157894736842,
+                    "marginLeft": 39.473684210526315,
+                  }
+                }
+                underlineColorAndroid="transparent"
+                value=""
+              />
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 20,
+                    "left": 20,
+                    "right": 20,
+                    "top": 20,
+                  }
+                }
+                isTVSelectable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../src/assets/icons/search/search.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "marginHorizontal": 39.473684210526315,
+                        "tintColor": "#E9B2A9",
+                      },
+                      Object {
+                        "height": 39.473684210526315,
+                        "width": 39.473684210526315,
+                      },
+                    ]
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 5.921052631578947,
+                  "flex": 0.5,
+                  "marginTop": 23.684210526315788,
+                  "overflow": "hidden",
+                },
+                Object {
+                  "marginBottom": 23.684210526315788,
+                  "marginLeft": 23.684210526315788,
+                  "marginRight": 47.368421052631575,
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              isTVSelectable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                accessibilityIgnoresInvertColors={true}
+                style={
+                  Object {
+                    "height": 394.7368421052631,
+                    "justifyContent": "space-between",
+                    "width": "100%",
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https:profile_picture",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": 394.7368421052631,
+                        "width": "100%",
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "flex-end",
+                      "borderRadius": 29.605263157894736,
+                      "height": 59.21052631578947,
+                      "margin": 31.57894736842105,
+                      "width": 59.21052631578947,
+                    }
+                  }
+                >
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 20,
+                        "left": 20,
+                        "right": 20,
+                        "top": 20,
+                      }
+                    }
+                    isTVSelectable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "white",
+                        "borderRadius": 29.605263157894736,
+                        "height": 59.21052631578947,
+                        "justifyContent": "center",
+                        "opacity": 1,
+                        "width": 59.21052631578947,
+                      }
+                    }
+                  >
+                    <Image
+                      source={
+                        Object {
+                          "testUri": "../../../src/assets/icons/star/star.png",
+                        }
+                      }
+                      style={
+                        Array [
+                          Object {
+                            "height": 23.684210526315788,
+                            "width": 23.684210526315788,
+                          },
+                          Object {
+                            "tintColor": null,
+                          },
+                        ]
+                      }
+                    />
+                  </View>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "justifyContent": "flex-end",
+                      "marginBottom": 31.57894736842105,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "#fff",
+                        "fontFamily": "Ubuntu-Regular",
+                        "fontSize": 35.526315789473685,
+                        "marginBottom": 17.763157894736842,
+                        "marginTop": 19.736842105263158,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    name
+                  </Text>
+                  <Text
+                    style={
+                      Object {
+                        "color": "#fff",
+                        "fontFamily": "Ubuntu-Italic",
+                        "fontSize": 21.710526315789473,
+                        "marginBottom": 29.605263157894736,
+                        "opacity": 0.7,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    latin_name
+                  </Text>
+                  <View
+                    style={
+                      Object {
+                        "alignSelf": "center",
+                        "backgroundColor": "black",
+                        "borderRadius": 31.57894736842105,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#fff",
+                          "fontFamily": "Ubuntu-Regular",
+                          "fontSize": 21.710526315789473,
+                          "paddingHorizontal": 23.684210526315788,
+                          "paddingVertical": 11.842105263157894,
+                          "textAlign": "center",
+                        }
+                      }
+                    >
+                      sightings
+                       sightings
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+      />
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`integration displaying loader before onDidMount fetchFlowers success, page 1 of 3, on scroll to bottom should load more flowers 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    ListEmptyComponent={
+      <Memo(ListEmpty)
+        error={false}
+        text="Loading flower list"
+      />
+    }
+    ListFooterComponent={
+      <Memo(ListFooterLoader)
+        flatListLoading={false}
+        listLength={2}
+      />
+    }
+    ListHeaderComponent={
+      <Memo(ListHeader)
+        clearInput={[Function]}
+        handleInput={[Function]}
+        headerSubtitle="Explore between more than 8.427 sightings"
+        headerTitle="Discover flowers around you"
+        placeholder="Looking for something specific?"
+        searchInput=""
+      />
+    }
+    contentContainerStyle={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "id": "id",
+          "latin_name": "latin_name",
+          "name": "name",
+          "profile_picture": "profile_picture",
+          "sightings": "sightings",
+        },
+        Object {
+          "id": "id",
+          "latin_name": "latin_name",
+          "name": "name",
+          "profile_picture": "profile_picture",
+          "sightings": "sightings",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    keyboardShouldPersistTaps="handled"
+    maxToRenderPerBatch={10}
+    numColumns={2}
+    onContentSizeChange={[Function]}
+    onEndReached={[Function]}
+    onEndReachedThreshold={0.5}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEnabled={true}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <RCTRefreshControl />
+    <View>
+      <View
+        onLayout={[Function]}
+      >
+        <View
+          accessibilityIgnoresInvertColors={true}
+          style={
+            Object {
+              "alignItems": "center",
+              "width": "100%",
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../src/assets/images/background/home-background.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "height": undefined,
+                  "width": "100%",
+                },
+                undefined,
+              ]
+            }
+          />
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 51.315789473684205,
+                "lineHeight": 57.23684210526316,
+                "marginTop": 118.42105263157895,
+                "paddingHorizontal": 126.3157894736842,
+                "textAlign": "center",
+              }
+            }
+          >
+            Discover flowers around you
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 31.57894736842105,
+                "lineHeight": 33.55263157894737,
+                "marginTop": 49.34210526315789,
+                "opacity": 0.7,
+                "textAlign": "center",
+              }
+            }
+          >
+            Explore between more than 8.427 sightings
+          </Text>
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "white",
+                    "borderColor": "black",
+                    "borderRadius": 5.921052631578947,
+                    "borderWidth": 1.9736842105263157,
+                    "flexDirection": "row",
+                    "height": 94.73684210526315,
+                    "width": "88%",
+                  },
+                  Object {
+                    "marginBottom": 153.94736842105263,
+                    "marginTop": 39.473684210526315,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                onChangeText={[Function]}
+                placeholder="Looking for something specific?"
+                placeholderTextColor="#949EA0"
+                rejectResponderTermination={true}
+                style={
+                  Object {
+                    "flex": 1,
+                    "fontFamily": "Ubuntu-Light",
+                    "fontSize": 27.63157894736842,
+                    "marginLeft": 39.473684210526315,
+                  }
+                }
+                underlineColorAndroid="transparent"
+                value=""
+              />
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 20,
+                    "left": 20,
+                    "right": 20,
+                    "top": 20,
+                  }
+                }
+                isTVSelectable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../src/assets/icons/search/search.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "marginHorizontal": 39.473684210526315,
+                        "tintColor": "#E9B2A9",
+                      },
+                      Object {
+                        "height": 39.473684210526315,
+                        "width": 39.473684210526315,
+                      },
+                    ]
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 5.921052631578947,
+                  "flex": 0.5,
+                  "marginTop": 23.684210526315788,
+                  "overflow": "hidden",
+                },
+                Object {
+                  "marginBottom": 0,
+                  "marginLeft": 23.684210526315788,
+                  "marginRight": 11.842105263157894,
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              isTVSelectable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                accessibilityIgnoresInvertColors={true}
+                style={
+                  Object {
+                    "height": 394.7368421052631,
+                    "justifyContent": "space-between",
+                    "width": "100%",
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https:profile_picture",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": 394.7368421052631,
+                        "width": "100%",
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "flex-end",
+                      "borderRadius": 29.605263157894736,
+                      "height": 59.21052631578947,
+                      "margin": 31.57894736842105,
+                      "width": 59.21052631578947,
+                    }
+                  }
+                >
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 20,
+                        "left": 20,
+                        "right": 20,
+                        "top": 20,
+                      }
+                    }
+                    isTVSelectable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "white",
+                        "borderRadius": 29.605263157894736,
+                        "height": 59.21052631578947,
+                        "justifyContent": "center",
+                        "opacity": 1,
+                        "width": 59.21052631578947,
+                      }
+                    }
+                  >
+                    <Image
+                      source={
+                        Object {
+                          "testUri": "../../../src/assets/icons/star/star.png",
+                        }
+                      }
+                      style={
+                        Array [
+                          Object {
+                            "height": 23.684210526315788,
+                            "width": 23.684210526315788,
+                          },
+                          Object {
+                            "tintColor": null,
+                          },
+                        ]
+                      }
+                    />
+                  </View>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "justifyContent": "flex-end",
+                      "marginBottom": 31.57894736842105,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "#fff",
+                        "fontFamily": "Ubuntu-Regular",
+                        "fontSize": 35.526315789473685,
+                        "marginBottom": 17.763157894736842,
+                        "marginTop": 19.736842105263158,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    name
+                  </Text>
+                  <Text
+                    style={
+                      Object {
+                        "color": "#fff",
+                        "fontFamily": "Ubuntu-Italic",
+                        "fontSize": 21.710526315789473,
+                        "marginBottom": 29.605263157894736,
+                        "opacity": 0.7,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    latin_name
+                  </Text>
+                  <View
+                    style={
+                      Object {
+                        "alignSelf": "center",
+                        "backgroundColor": "black",
+                        "borderRadius": 31.57894736842105,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#fff",
+                          "fontFamily": "Ubuntu-Regular",
+                          "fontSize": 21.710526315789473,
+                          "paddingHorizontal": 23.684210526315788,
+                          "paddingVertical": 11.842105263157894,
+                          "textAlign": "center",
+                        }
+                      }
+                    >
+                      sightings
+                       sightings
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 5.921052631578947,
+                  "flex": 0.5,
+                  "marginTop": 23.684210526315788,
+                  "overflow": "hidden",
+                },
+                Object {
+                  "marginBottom": 23.684210526315788,
+                  "marginLeft": 11.842105263157894,
+                  "marginRight": 23.684210526315788,
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              isTVSelectable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                accessibilityIgnoresInvertColors={true}
+                style={
+                  Object {
+                    "height": 394.7368421052631,
+                    "justifyContent": "space-between",
+                    "width": "100%",
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https:profile_picture",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": 394.7368421052631,
+                        "width": "100%",
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "flex-end",
+                      "borderRadius": 29.605263157894736,
+                      "height": 59.21052631578947,
+                      "margin": 31.57894736842105,
+                      "width": 59.21052631578947,
+                    }
+                  }
+                >
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 20,
+                        "left": 20,
+                        "right": 20,
+                        "top": 20,
+                      }
+                    }
+                    isTVSelectable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "white",
+                        "borderRadius": 29.605263157894736,
+                        "height": 59.21052631578947,
+                        "justifyContent": "center",
+                        "opacity": 1,
+                        "width": 59.21052631578947,
+                      }
+                    }
+                  >
+                    <Image
+                      source={
+                        Object {
+                          "testUri": "../../../src/assets/icons/star/star.png",
+                        }
+                      }
+                      style={
+                        Array [
+                          Object {
+                            "height": 23.684210526315788,
+                            "width": 23.684210526315788,
+                          },
+                          Object {
+                            "tintColor": null,
+                          },
+                        ]
+                      }
+                    />
+                  </View>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "justifyContent": "flex-end",
+                      "marginBottom": 31.57894736842105,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "#fff",
+                        "fontFamily": "Ubuntu-Regular",
+                        "fontSize": 35.526315789473685,
+                        "marginBottom": 17.763157894736842,
+                        "marginTop": 19.736842105263158,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    name
+                  </Text>
+                  <Text
+                    style={
+                      Object {
+                        "color": "#fff",
+                        "fontFamily": "Ubuntu-Italic",
+                        "fontSize": 21.710526315789473,
+                        "marginBottom": 29.605263157894736,
+                        "opacity": 0.7,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    latin_name
+                  </Text>
+                  <View
+                    style={
+                      Object {
+                        "alignSelf": "center",
+                        "backgroundColor": "black",
+                        "borderRadius": 31.57894736842105,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#fff",
+                          "fontFamily": "Ubuntu-Regular",
+                          "fontSize": 21.710526315789473,
+                          "paddingHorizontal": 23.684210526315788,
+                          "paddingVertical": 11.842105263157894,
+                          "textAlign": "center",
+                        }
+                      }
+                    >
+                      sightings
+                       sightings
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+      />
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`integration displaying loader before onDidMount fetchFlowers success, page 3 of 3 no more results, on scroll to bottom should not call fetchFlowers flowers 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    ListEmptyComponent={
+      <Memo(ListEmpty)
+        error={false}
+        text="Loading flower list"
+      />
+    }
+    ListFooterComponent={
+      <Memo(ListFooterLoader)
+        flatListLoading={false}
+        listLength={1}
+      />
+    }
+    ListHeaderComponent={
+      <Memo(ListHeader)
+        clearInput={[Function]}
+        handleInput={[Function]}
+        headerSubtitle="Explore between more than 8.427 sightings"
+        headerTitle="Discover flowers around you"
+        placeholder="Looking for something specific?"
+        searchInput=""
+      />
+    }
+    contentContainerStyle={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+    data={
+      Array [
+        Object {
+          "id": "id",
+          "latin_name": "latin_name",
+          "name": "name",
+          "profile_picture": "profile_picture",
+          "sightings": "sightings",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    keyboardShouldPersistTaps="handled"
+    maxToRenderPerBatch={10}
+    numColumns={2}
+    onContentSizeChange={[Function]}
+    onEndReached={[Function]}
+    onEndReachedThreshold={0.5}
+    onLayout={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEnabled={true}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <RCTRefreshControl />
+    <View>
+      <View
+        onLayout={[Function]}
+      >
+        <View
+          accessibilityIgnoresInvertColors={true}
+          style={
+            Object {
+              "alignItems": "center",
+              "width": "100%",
+            }
+          }
+        >
+          <Image
+            source={
+              Object {
+                "testUri": "../../../src/assets/images/background/home-background.png",
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "height": undefined,
+                  "width": "100%",
+                },
+                undefined,
+              ]
+            }
+          />
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 51.315789473684205,
+                "lineHeight": 57.23684210526316,
+                "marginTop": 118.42105263157895,
+                "paddingHorizontal": 126.3157894736842,
+                "textAlign": "center",
+              }
+            }
+          >
+            Discover flowers around you
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#fff",
+                "fontFamily": "Ubuntu-Light",
+                "fontSize": 31.57894736842105,
+                "lineHeight": 33.55263157894737,
+                "marginTop": 49.34210526315789,
+                "opacity": 0.7,
+                "textAlign": "center",
+              }
+            }
+          >
+            Explore between more than 8.427 sightings
+          </Text>
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "white",
+                    "borderColor": "black",
+                    "borderRadius": 5.921052631578947,
+                    "borderWidth": 1.9736842105263157,
+                    "flexDirection": "row",
+                    "height": 94.73684210526315,
+                    "width": "88%",
+                  },
+                  Object {
+                    "marginBottom": 153.94736842105263,
+                    "marginTop": 39.473684210526315,
+                  },
+                ]
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                onChangeText={[Function]}
+                placeholder="Looking for something specific?"
+                placeholderTextColor="#949EA0"
+                rejectResponderTermination={true}
+                style={
+                  Object {
+                    "flex": 1,
+                    "fontFamily": "Ubuntu-Light",
+                    "fontSize": 27.63157894736842,
+                    "marginLeft": 39.473684210526315,
+                  }
+                }
+                underlineColorAndroid="transparent"
+                value=""
+              />
+              <View
+                accessible={true}
+                focusable={true}
+                hitSlop={
+                  Object {
+                    "bottom": 20,
+                    "left": 20,
+                    "right": 20,
+                    "top": 20,
+                  }
+                }
+                isTVSelectable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "testUri": "../../../src/assets/icons/search/search.png",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "marginHorizontal": 39.473684210526315,
+                        "tintColor": "#E9B2A9",
+                      },
+                      Object {
+                        "height": 39.473684210526315,
+                        "width": 39.473684210526315,
+                      },
+                    ]
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 5.921052631578947,
+                  "flex": 0.5,
+                  "marginTop": 23.684210526315788,
+                  "overflow": "hidden",
+                },
+                Object {
+                  "marginBottom": 23.684210526315788,
+                  "marginLeft": 23.684210526315788,
+                  "marginRight": 47.368421052631575,
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              focusable={true}
+              isTVSelectable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                accessibilityIgnoresInvertColors={true}
+                style={
+                  Object {
+                    "height": 394.7368421052631,
+                    "justifyContent": "space-between",
+                    "width": "100%",
+                  }
+                }
+              >
+                <Image
+                  source={
+                    Object {
+                      "uri": "https:profile_picture",
+                    }
+                  }
+                  style={
+                    Array [
+                      Object {
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "height": 394.7368421052631,
+                        "width": "100%",
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+                <View
+                  style={
+                    Object {
+                      "alignSelf": "flex-end",
+                      "borderRadius": 29.605263157894736,
+                      "height": 59.21052631578947,
+                      "margin": 31.57894736842105,
+                      "width": 59.21052631578947,
+                    }
+                  }
+                >
+                  <View
+                    accessible={true}
+                    focusable={true}
+                    hitSlop={
+                      Object {
+                        "bottom": 20,
+                        "left": 20,
+                        "right": 20,
+                        "top": 20,
+                      }
+                    }
+                    isTVSelectable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "white",
+                        "borderRadius": 29.605263157894736,
+                        "height": 59.21052631578947,
+                        "justifyContent": "center",
+                        "opacity": 1,
+                        "width": 59.21052631578947,
+                      }
+                    }
+                  >
+                    <Image
+                      source={
+                        Object {
+                          "testUri": "../../../src/assets/icons/star/star.png",
+                        }
+                      }
+                      style={
+                        Array [
+                          Object {
+                            "height": 23.684210526315788,
+                            "width": 23.684210526315788,
+                          },
+                          Object {
+                            "tintColor": null,
+                          },
+                        ]
+                      }
+                    />
+                  </View>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "justifyContent": "flex-end",
+                      "marginBottom": 31.57894736842105,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "#fff",
+                        "fontFamily": "Ubuntu-Regular",
+                        "fontSize": 35.526315789473685,
+                        "marginBottom": 17.763157894736842,
+                        "marginTop": 19.736842105263158,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    name
+                  </Text>
+                  <Text
+                    style={
+                      Object {
+                        "color": "#fff",
+                        "fontFamily": "Ubuntu-Italic",
+                        "fontSize": 21.710526315789473,
+                        "marginBottom": 29.605263157894736,
+                        "opacity": 0.7,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    latin_name
+                  </Text>
+                  <View
+                    style={
+                      Object {
+                        "alignSelf": "center",
+                        "backgroundColor": "black",
+                        "borderRadius": 31.57894736842105,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "#fff",
+                          "fontFamily": "Ubuntu-Regular",
+                          "fontSize": 21.710526315789473,
+                          "paddingHorizontal": 23.684210526315788,
+                          "paddingVertical": 11.842105263157894,
+                          "textAlign": "center",
+                        }
+                      }
+                    >
+                      sightings
+                       sightings
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+      />
+    </View>
+  </RCTScrollView>
+</View>
+`;

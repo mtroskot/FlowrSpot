@@ -105,7 +105,13 @@ exports[`SearchResults wrapper renders search results 1`] = `
   />
   <View>
     <FlatList
-      ItemSeparatorComponent={[Function]}
+      ItemSeparatorComponent={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "compare": null,
+          "type": [Function],
+        }
+      }
       bounces={false}
       contentContainerStyle={
         Object {
@@ -144,10 +150,10 @@ exports[`SearchResults wrapper renders search results 1`] = `
     />
   </View>
   <View>
-    <TouchableOpacity
+    <Memo(CustomButton)
       activeOpacity={0.95}
       onPress={[MockFunction]}
-      style={
+      tOpacityStyle={
         Object {
           "backgroundColor": "#e8e8e8",
           "borderRadius": 19.736842105263158,
@@ -156,19 +162,15 @@ exports[`SearchResults wrapper renders search results 1`] = `
           "width": "100%",
         }
       }
-    >
-      <Text
-        style={
-          Object {
-            "fontFamily": "Ubuntu-Regular",
-            "fontSize": 27.63157894736842,
-            "textAlign": "center",
-          }
+      text="Close"
+      textStyle={
+        Object {
+          "fontFamily": "Ubuntu-Regular",
+          "fontSize": 27.63157894736842,
+          "textAlign": "center",
         }
-      >
-        Close
-      </Text>
-    </TouchableOpacity>
+      }
+    />
   </View>
 </Fragment>
 `;

@@ -69,14 +69,14 @@ describe('SearchResults wrapper', () => {
     expect(wrapper.find('Fragment')).toHaveLength(1);
     expect(wrapper.find('View')).toHaveLength(3);
     expect(wrapper.find('Memo(Loader)')).toHaveLength(0);
-    expect(wrapper.find('Text')).toHaveLength(1);
+    expect(wrapper.find('Text')).toHaveLength(0);
     expect(
       wrapper
-        .find('Text')
+        .find('Memo(CustomButton)')
         .first()
-        .props().children
+        .props().text
     ).toEqual('Close');
-    expect(wrapper.find('TouchableOpacity')).toHaveLength(1);
+    expect(wrapper.find('Memo(CustomButton)')).toHaveLength(1);
     expect(wrapper.find('FlatList')).toHaveLength(1);
     expect(wrapper.find('FlatList').props().data).toEqual(props.searchData.searchResults);
     expect(
@@ -102,6 +102,10 @@ describe('SearchResults wrapper', () => {
         }}
       />
     );
+    const ItemSeparatorComponent = wrapper.find('FlatList').prop('ItemSeparatorComponent');
+    const itemSeparatorComponentShallowWrapper = shallow(<ItemSeparatorComponent />);
+    expect(itemSeparatorComponentShallowWrapper.find('View')).toHaveLength(1);
+    expect(itemSeparatorComponentShallowWrapper.props().children).toEqual(undefined);
     expect(wrapper).toMatchSnapshot();
   });
 });
@@ -136,7 +140,7 @@ describe('interaction', () => {
   });
   it('pressing Close buttton, should call the onClosePress callback', () => {
     wrapper
-      .find('TouchableOpacity')
+      .find('Memo(CustomButton)')
       .first()
       .prop('onPress')();
     expect(props.onClosePress).toHaveBeenCalledTimes(1);

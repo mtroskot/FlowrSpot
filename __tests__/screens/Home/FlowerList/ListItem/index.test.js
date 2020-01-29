@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { shallow } from 'enzyme';
-import FlowerListItem from 'src/screens/Home/Item';
+import FlowerListItem from 'src/screens/Home/FlowerList/ListItem';
 
 describe('FlowerListItem wrapper', () => {
   it('renders correctly, favoriteFlowerList empty', () => {
