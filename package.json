@@ -78,7 +78,7 @@
       "<rootDir>/node_modules/"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|react-navigation)"
+      "node_modules/(?!(jest-)?react-native|react-navigation|@react-navigation/native/)"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
