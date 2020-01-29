@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { shallow } from 'enzyme';
-import FlowerListItem from 'src/screens/Home/FlowerListItem';
+import FlowerListItem from 'src/screens/Home/Item';
 
 describe('FlowerListItem wrapper', () => {
   it('renders correctly, favoriteFlowerList empty', () => {
@@ -166,5 +166,72 @@ describe('FlowerListItem wrapper', () => {
         .prop('updatingItemId')
     ).toEqual(props.updatingItemId);
     expect(wrapper).toMatchSnapshot();
+  });
+});
+
+describe('interaction', () => {
+  it("favoriteFlowerList doesn't contain item id,onIconPress should call favoriteAction", () => {
+    const props = {
+      item: {
+        id: 'id',
+        name: 'name',
+        latin_name: 'latin_name',
+        sightings: 'sightings',
+        profile_picture: 'profile_picture'
+      },
+      index: 0,
+      arrayLength: 10,
+      onFlowerPress: jest.fn(),
+      onFavoritePress: jest.fn(),
+      onUnfavoritePress: jest.fn(),
+      isAuthenticated: false,
+      updatingItemId: null,
+      favoriteFlowerList: [{ flowerId: 'foo' }]
+    };
+
+    const wrapper = shallow(<FlowerListItem {...props} />);
+    wrapper
+      .find('Memo(CardItem)')
+      .first()
+      .prop('onIconPress')();
+    wrapper
+      .find('Memo(CardItem)')
+      .first()
+      .prop('onItemPress')();
+    expect(props.onFlowerPress).toHaveBeenCalledTimes(1);
+    expect(props.onFavoritePress).toHaveBeenCalledTimes(1);
+    expect(props.onUnfavoritePress).toHaveBeenCalledTimes(0);
+  });
+  it('favoriteFlowerList contains item id,onIconPress should call unfavoriteAction', () => {
+    const props = {
+      item: {
+        id: 'id',
+        name: 'name',
+        latin_name: 'latin_name',
+        sightings: 'sightings',
+        profile_picture: 'profile_picture'
+      },
+      index: 0,
+      arrayLength: 10,
+      onFlowerPress: jest.fn(),
+      onFavoritePress: jest.fn(),
+      onUnfavoritePress: jest.fn(),
+      isAuthenticated: false,
+      updatingItemId: null,
+      favoriteFlowerList: [{ flowerId: 'id' }]
+    };
+
+    const wrapper = shallow(<FlowerListItem {...props} />);
+    wrapper
+      .find('Memo(CardItem)')
+      .first()
+      .prop('onIconPress')();
+    wrapper
+      .find('Memo(CardItem)')
+      .first()
+      .prop('onItemPress')();
+    expect(props.onFlowerPress).toHaveBeenCalledTimes(1);
+    expect(props.onFavoritePress).toHaveBeenCalledTimes(0);
+    expect(props.onUnfavoritePress).toHaveBeenCalledTimes(1);
   });
 });

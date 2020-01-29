@@ -3,33 +3,8 @@ import { View } from 'react-native';
 import { CardItem } from 'src/components';
 import PropTypes from 'prop-types';
 import { favoriteFlowerListPropTypes, flowerPropTypes } from 'src/constants/propTypes';
-import styles from 'src/screens/Home/FlowerListItem/styles';
-import { dimensions } from 'src/styles';
-const { rem } = dimensions;
-
-/**
- * Calculates margins needed for each item in FlatList with 2 columns,
- * so that the item distance from borders and other items is equal
- * @param index The index of current element
- * @param arrayLength The length of FlatList data array
- * @returns {{marginLeftWidth: number, marginBottomWidth: number, marginRightWidth: number}}
- */
-function calculateMargins(index, arrayLength) {
-  const marginWidth = 12;
-  const marginLeftWidth = index % 2 === 0 ? marginWidth * rem : (marginWidth / 2) * rem;
-  const marginRightWidth =
-    index === arrayLength - 1 && index % 2 === 0
-      ? marginWidth * 2 * rem
-      : index % 2 === 0
-      ? (marginWidth / 2) * rem
-      : marginWidth * rem;
-  const marginBottomWidth = index === arrayLength - 1 ? marginWidth * rem : 0;
-  return {
-    marginLeftWidth,
-    marginRightWidth,
-    marginBottomWidth
-  };
-}
+import styles from 'src/screens/Home/FlowerList/ListItem/styles';
+import { AppUtils } from 'src/utils';
 
 const FlowerListItem = ({
   item,
@@ -43,7 +18,10 @@ const FlowerListItem = ({
   favoriteFlowerList
 }) => {
   const { id, name, latin_name, sightings, profile_picture } = item;
-  const { marginLeftWidth, marginRightWidth, marginBottomWidth } = calculateMargins(index, arrayLength);
+  const { marginLeftWidth, marginRightWidth, marginBottomWidth } = AppUtils.calculateFlatListItemMargins(
+    index,
+    arrayLength
+  );
   const favorite = favoriteFlowerList.find(favorite => favorite.flowerId === id);
   const onIconPress = favorite ? () => onUnfavoritePress(id, favorite.favoriteId) : () => onFavoritePress(id);
   return (
