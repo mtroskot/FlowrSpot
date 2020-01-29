@@ -1,5 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
+import { Header } from 'react-navigation-stack';
 import { dimensions } from 'src/styles';
+
 const { rem } = dimensions;
 
 const styles = StyleSheet.create({
@@ -18,10 +20,10 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   topPosition: {
-    top: 120 * rem
+    top: Platform.OS === 'ios' ? Header.HEIGHT + 30 : Header.HEIGHT
   },
   bottomPosition: {
-    bottom: 40 * rem
+    bottom: Platform.OS === 'ios' ? 90 * rem : 60 * rem
   }
 });
 
