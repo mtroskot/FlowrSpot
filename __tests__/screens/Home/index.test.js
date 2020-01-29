@@ -1,11 +1,12 @@
 import React from 'react';
 import { ActivityIndicator, FlatList, RefreshControl, TextInput } from 'react-native';
+import { when } from 'jest-when';
 import { shallow } from 'enzyme';
 import TestRenderer from 'react-test-renderer';
 import Home from 'src/screens/Home';
 import configureMockStore from 'redux-mock-store';
 import NavigationService from 'src/services/navigation';
-import ApiService from 'src/services/api';
+import ApiService, { flowerRequests } from 'src/services/api';
 import sadFace from 'src/assets/images/emoji/sadFace.png';
 import clear from 'src/assets/icons/clear/clear.png';
 import { favoriteFlower, unfavoriteFlower } from 'src/store/actions/flowerActions';
@@ -47,6 +48,19 @@ jest.mock('src/services/navigation', () => ({
 }));
 
 describe('integration', () => {
+  const getFlowers = 'flowerRequests.getFlowers';
+  const searchFlowers = 'flowerRequests.searchFlowers';
+  ApiService.callApiAndCheckResponse = jest.fn();
+  flowerRequests.getFlowers = jest.fn();
+  when(flowerRequests.getFlowers)
+    .calledWith(expect.anything())
+    .mockReturnValue(getFlowers);
+
+  flowerRequests.searchFlowers = jest.fn();
+  when(flowerRequests.searchFlowers)
+    .calledWith(expect.anything())
+    .mockReturnValue(searchFlowers);
+
   jest.useFakeTimers();
   beforeEach(() => {
     NavigationService.navigate.mockClear();
@@ -56,7 +70,36 @@ describe('integration', () => {
     jest.clearAllMocks();
   });
 
-  it('calling handleInput should update searchInput state,calling clear input should clear state', done => {
+  const fetchFlowersSuccessMock = {
+    flowers: [
+      {
+        id: 'fetch id',
+        name: 'fetch name',
+        latin_name: 'fetch latin_name',
+        sightings: 'fetch sightings',
+        profile_picture: 'fetch profile_picture'
+      }
+    ],
+    meta: {
+      pagination: {
+        current_page: 1,
+        total_pages: 3
+      }
+    }
+  };
+  const searchFlowersSuccessMock = {
+    flowers: [
+      {
+        id: 'search id',
+        name: 'search name',
+        latin_name: 'search latin_name',
+        sightings: 'search sightings',
+        profile_picture: 'search profile_picture'
+      }
+    ]
+  };
+
+  it('calling handleInput should update searchInput state,calling clear input should clear searchInput state', done => {
     const testRenderer = TestRenderer.create(<Home store={store} />);
     const testInstance = testRenderer.root;
 
@@ -102,11 +145,13 @@ describe('integration', () => {
       expect(NavigationService.navigate.mock.calls[0][1]).toEqual({ flowerId: 'id' });
     }
   );
-
+  // FLAT_LIST TESTS
   it('displaying loader before onDidMount fetchFlowers error, after error should display ListEmptyComponent', done => {
-    ApiService.callApiAndCheckResponse = jest.fn().mockImplementation(() => {
-      throw 'Error';
-    });
+    when(ApiService.callApiAndCheckResponse)
+      .calledWith(getFlowers)
+      .mockImplementation(() => {
+        throw 'Error';
+      });
     const testRenderer = TestRenderer.create(<Home store={store} />);
     const testInstance = testRenderer.root;
     expect(testInstance.findByType(FlatList).props.data).toEqual([]);
@@ -127,38 +172,16 @@ describe('integration', () => {
   });
 
   it('displaying loader before onDidMount fetchFlowers success, after success should display renderedItems', done => {
-    ApiService.callApiAndCheckResponse = jest.fn().mockImplementation(() => ({
-      flowers: [
-        {
-          id: 'id',
-          name: 'name',
-          latin_name: 'latin_name',
-          sightings: 'sightings',
-          profile_picture: 'profile_picture'
-        }
-      ],
-      meta: {
-        pagination: {
-          current_page: 1,
-          total_pages: 3
-        }
-      }
-    }));
+    when(ApiService.callApiAndCheckResponse)
+      .calledWith(getFlowers)
+      .mockReturnValue(fetchFlowersSuccessMock);
     const testRenderer = TestRenderer.create(<Home store={store} />);
     const testInstance = testRenderer.root;
     TestRenderer.act(() => {
       jest.runAllTimers();
       done();
     });
-    expect(testInstance.findByType(FlatList).props.data).toEqual([
-      {
-        id: 'id',
-        name: 'name',
-        latin_name: 'latin_name',
-        sightings: 'sightings',
-        profile_picture: 'profile_picture'
-      }
-    ]);
+    expect(testInstance.findByType(FlatList).props.data).toEqual(fetchFlowersSuccessMock.flowers);
     expect(testInstance.findAllByType(ActivityIndicator)).toHaveLength(0);
     expect(testInstance.findAll(el => el.type === 'Text' && el.children[0] === 'Loading flower list')).toHaveLength(0);
     expect(
@@ -169,25 +192,9 @@ describe('integration', () => {
   });
 
   it('displaying loader before onDidMount fetchFlowers error, refreshing FlatList fetchFlowers success', done => {
-    ApiService.callApiAndCheckResponse = jest
-      .fn()
-      .mockImplementation(() => ({
-        flowers: [
-          {
-            id: 'id',
-            name: 'name',
-            latin_name: 'latin_name',
-            sightings: 'sightings',
-            profile_picture: 'profile_picture'
-          }
-        ],
-        meta: {
-          pagination: {
-            current_page: 1,
-            total_pages: 3
-          }
-        }
-      }))
+    when(ApiService.callApiAndCheckResponse)
+      .calledWith(getFlowers)
+      .mockImplementation(() => fetchFlowersSuccessMock)
       .mockImplementationOnce(() => {
         throw 'Error';
       });
@@ -212,15 +219,7 @@ describe('integration', () => {
       done();
     });
     // RECOVERED STATE
-    expect(testInstance.findByType(FlatList).props.data).toEqual([
-      {
-        id: 'id',
-        name: 'name',
-        latin_name: 'latin_name',
-        sightings: 'sightings',
-        profile_picture: 'profile_picture'
-      }
-    ]);
+    expect(testInstance.findByType(FlatList).props.data).toEqual(fetchFlowersSuccessMock.flowers);
     expect(testInstance.findAllByType(ActivityIndicator)).toHaveLength(0);
     expect(
       testInstance.findAllByType(el => el.type === 'Text' && el.children[0] === 'Loading flower list')
@@ -236,38 +235,16 @@ describe('integration', () => {
     'displaying loader before onDidMount fetchFlowers success, page 1 of 3,' +
       ' on scroll to bottom should load more flowers',
     done => {
-      ApiService.callApiAndCheckResponse = jest.fn().mockImplementation(() => ({
-        flowers: [
-          {
-            id: 'id',
-            name: 'name',
-            latin_name: 'latin_name',
-            sightings: 'sightings',
-            profile_picture: 'profile_picture'
-          }
-        ],
-        meta: {
-          pagination: {
-            current_page: 1,
-            total_pages: 3
-          }
-        }
-      }));
+      when(ApiService.callApiAndCheckResponse)
+        .calledWith(getFlowers)
+        .mockImplementation(() => fetchFlowersSuccessMock);
       const testRenderer = TestRenderer.create(<Home store={store} />);
       const testInstance = testRenderer.root;
       TestRenderer.act(() => {
         jest.runAllTimers();
         done();
       });
-      expect(testInstance.findByType(FlatList).props.data).toEqual([
-        {
-          id: 'id',
-          name: 'name',
-          latin_name: 'latin_name',
-          sightings: 'sightings',
-          profile_picture: 'profile_picture'
-        }
-      ]);
+      expect(testInstance.findByType(FlatList).props.data).toEqual(fetchFlowersSuccessMock.flowers);
       expect(testInstance.findAllByType(ActivityIndicator)).toHaveLength(0);
       expect(testInstance.findAll(el => el.type === 'Text' && el.children[0] === 'Loading flower list')).toHaveLength(
         0
@@ -287,20 +264,8 @@ describe('integration', () => {
       });
       // AFTER LOADING MORE FLOWERS
       expect(testInstance.findByType(FlatList).props.data).toEqual([
-        {
-          id: 'id',
-          name: 'name',
-          latin_name: 'latin_name',
-          sightings: 'sightings',
-          profile_picture: 'profile_picture'
-        },
-        {
-          id: 'id',
-          name: 'name',
-          latin_name: 'latin_name',
-          sightings: 'sightings',
-          profile_picture: 'profile_picture'
-        }
+        fetchFlowersSuccessMock.flowers[0],
+        fetchFlowersSuccessMock.flowers[0]
       ]);
       expect(testInstance.findAllByType(ActivityIndicator)).toHaveLength(0);
       expect(testInstance.findAll(el => el.type === 'Text' && el.children[0] === 'Loading flower list')).toHaveLength(
@@ -317,38 +282,24 @@ describe('integration', () => {
     'displaying loader before onDidMount fetchFlowers success, page 3 of 3 no more results,' +
       ' on scroll to bottom should not call fetchFlowers flowers',
     done => {
-      ApiService.callApiAndCheckResponse = jest.fn().mockImplementation(() => ({
-        flowers: [
-          {
-            id: 'id',
-            name: 'name',
-            latin_name: 'latin_name',
-            sightings: 'sightings',
-            profile_picture: 'profile_picture'
+      when(ApiService.callApiAndCheckResponse)
+        .calledWith(getFlowers)
+        .mockImplementation(() => ({
+          ...fetchFlowersSuccessMock,
+          meta: {
+            pagination: {
+              current_page: 3,
+              total_pages: 3
+            }
           }
-        ],
-        meta: {
-          pagination: {
-            current_page: 3,
-            total_pages: 3
-          }
-        }
-      }));
+        }));
       const testRenderer = TestRenderer.create(<Home store={store} />);
       const testInstance = testRenderer.root;
       TestRenderer.act(() => {
         jest.runAllTimers();
         done();
       });
-      expect(testInstance.findByType(FlatList).props.data).toEqual([
-        {
-          id: 'id',
-          name: 'name',
-          latin_name: 'latin_name',
-          sightings: 'sightings',
-          profile_picture: 'profile_picture'
-        }
-      ]);
+      expect(testInstance.findByType(FlatList).props.data).toEqual(fetchFlowersSuccessMock.flowers);
       expect(testInstance.findAllByType(ActivityIndicator)).toHaveLength(0);
       expect(testInstance.findAll(el => el.type === 'Text' && el.children[0] === 'Loading flower list')).toHaveLength(
         0
@@ -366,16 +317,8 @@ describe('integration', () => {
         jest.runAllTimers();
         done();
       });
-      // AFTER LOADING MORE FLOWERS
-      expect(testInstance.findByType(FlatList).props.data).toEqual([
-        {
-          id: 'id',
-          name: 'name',
-          latin_name: 'latin_name',
-          sightings: 'sightings',
-          profile_picture: 'profile_picture'
-        }
-      ]);
+      // AFTER ON_END_REACHED_CALLED LIST DATA SHOULD STAY SAME
+      expect(testInstance.findByType(FlatList).props.data).toEqual(fetchFlowersSuccessMock.flowers);
       expect(testInstance.findAllByType(ActivityIndicator)).toHaveLength(0);
       expect(testInstance.findAll(el => el.type === 'Text' && el.children[0] === 'Loading flower list')).toHaveLength(
         0
@@ -387,11 +330,16 @@ describe('integration', () => {
       expect(testRenderer.toJSON()).toMatchSnapshot();
     }
   );
-
+  // SEARCH_BAR TESTS
   it('calling handleInput should trigger searchFlowers, searchFlowers error', done => {
-    ApiService.callApiAndCheckResponse = jest.fn().mockImplementation(() => {
-      throw 'Error';
-    });
+    when(ApiService.callApiAndCheckResponse)
+      .calledWith(searchFlowers)
+      .mockImplementationOnce(() => {
+        throw 'Error';
+      });
+    when(ApiService.callApiAndCheckResponse)
+      .calledWith(getFlowers)
+      .mockReturnValue(fetchFlowersSuccessMock);
     const testRenderer = TestRenderer.create(<Home store={store} />);
     const testInstance = testRenderer.root;
     expect(testInstance.findByType(TextInput).props.value).toBe('');
@@ -412,9 +360,11 @@ describe('integration', () => {
   });
 
   it('calling handleInput should trigger searchFlowers, searchFlowers success, no results found', done => {
-    ApiService.callApiAndCheckResponse = jest.fn().mockImplementation(() => ({
-      flowers: []
-    }));
+    when(ApiService.callApiAndCheckResponse)
+      .calledWith(searchFlowers)
+      .mockImplementation(() => ({
+        flowers: []
+      }));
     const testRenderer = TestRenderer.create(<Home store={store} />);
     const testInstance = testRenderer.root;
     expect(testInstance.findByType(TextInput).props.value).toBe('');
@@ -439,17 +389,13 @@ describe('integration', () => {
       ' calling close should hide SearchResults, typing the same input again ' +
       'should show search results without calling the api ',
     done => {
-      ApiService.callApiAndCheckResponse = jest.fn().mockImplementation(() => ({
-        flowers: [
-          {
-            id: 'id',
-            name: 'name',
-            latin_name: 'latin_name',
-            sightings: 'sightings',
-            profile_picture: 'profile_picture'
-          }
-        ]
-      }));
+      when(ApiService.callApiAndCheckResponse)
+        .calledWith(searchFlowers)
+        .mockImplementation(() => searchFlowersSuccessMock);
+      when(ApiService.callApiAndCheckResponse)
+        .calledWith(getFlowers)
+        .mockReturnValue(fetchFlowersSuccessMock);
+
       const testRenderer = TestRenderer.create(<Home store={store} />);
       const testInstance = testRenderer.root;
       expect(testInstance.findByType(TextInput).props.value).toBe('');
@@ -465,15 +411,8 @@ describe('integration', () => {
       // SEARCH_RESULTS DISPLAYED
       const flatListsAfterSearch = testInstance.findAllByType(FlatList);
       expect(flatListsAfterSearch).toHaveLength(2);
-      expect(flatListsAfterSearch[1].props.data).toEqual([
-        {
-          id: 'id',
-          name: 'name',
-          latin_name: 'latin_name',
-          sightings: 'sightings',
-          profile_picture: 'profile_picture'
-        }
-      ]);
+      expect(flatListsAfterSearch[0].props.data).toEqual(fetchFlowersSuccessMock.flowers);
+      expect(flatListsAfterSearch[1].props.data).toEqual(searchFlowersSuccessMock.flowers);
       expect(flatListsAfterSearch[0].props.scrollEnabled).toEqual(false);
       expect(testInstance.findAll(el => el.type === 'Text' && el.children[0] === 'Close')).toHaveLength(1);
       expect(testInstance.findByType(TextInput).props.value).toBe('abc');
@@ -499,15 +438,7 @@ describe('integration', () => {
       });
       const flatListsAfterSearchResultsReopen = testInstance.findAllByType(FlatList);
       expect(flatListsAfterSearchResultsReopen).toHaveLength(2);
-      expect(flatListsAfterSearchResultsReopen[1].props.data).toEqual([
-        {
-          id: 'id',
-          name: 'name',
-          latin_name: 'latin_name',
-          sightings: 'sightings',
-          profile_picture: 'profile_picture'
-        }
-      ]);
+      expect(flatListsAfterSearchResultsReopen[1].props.data).toEqual(searchFlowersSuccessMock.flowers);
       expect(flatListsAfterSearchResultsReopen[0].props.scrollEnabled).toEqual(false);
       expect(testInstance.findAll(el => el.type === 'Text' && el.children[0] === 'Close')).toHaveLength(1);
       expect(testInstance.findByType(TextInput).props.value).toBe('abc');
