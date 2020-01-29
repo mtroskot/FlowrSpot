@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FlowerListHeader wrapper renders correctly, searchInput empty 1`] = `
+<ImageBackground
+  source={
+    Object {
+      "testUri": "../../../src/assets/images/background/home-background.png",
+    }
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#fff",
+        "fontFamily": "Ubuntu-Light",
+        "fontSize": 51.315789473684205,
+        "lineHeight": 57.23684210526316,
+        "marginTop": 118.42105263157895,
+        "paddingHorizontal": 126.3157894736842,
+        "textAlign": "center",
+      }
+    }
+  >
+    headerTitle
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#fff",
+        "fontFamily": "Ubuntu-Light",
+        "fontSize": 31.57894736842105,
+        "lineHeight": 33.55263157894737,
+        "marginTop": 49.34210526315789,
+        "opacity": 0.7,
+        "textAlign": "center",
+      }
+    }
+  >
+    headerSubtitle
+  </Text>
+  <View>
+    <Memo(SearchBar)
+      clearInput={[MockFunction]}
+      handleInput={[MockFunction]}
+      placeholder="placeholder"
+      searchInput=""
+      viewStyle={
+        Object {
+          "marginBottom": 153.94736842105263,
+          "marginTop": 39.473684210526315,
+        }
+      }
+    />
+  </View>
+</ImageBackground>
+`;
+
+exports[`FlowerListHeader wrapper renders correctly, searchInput not empty 1`] = `
+<ImageBackground
+  source={
+    Object {
+      "testUri": "../../../src/assets/images/background/home-background.png",
+    }
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#fff",
+        "fontFamily": "Ubuntu-Light",
+        "fontSize": 51.315789473684205,
+        "lineHeight": 57.23684210526316,
+        "marginTop": 118.42105263157895,
+        "paddingHorizontal": 126.3157894736842,
+        "textAlign": "center",
+      }
+    }
+  >
+    headerTitle
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#fff",
+        "fontFamily": "Ubuntu-Light",
+        "fontSize": 31.57894736842105,
+        "lineHeight": 33.55263157894737,
+        "marginTop": 49.34210526315789,
+        "opacity": 0.7,
+        "textAlign": "center",
+      }
+    }
+  >
+    headerSubtitle
+  </Text>
+  <View>
+    <Memo(SearchBar)
+      clearInput={[MockFunction]}
+      handleInput={[MockFunction]}
+      placeholder="placeholder"
+      searchInput="searchInput"
+      viewStyle={
+        Object {
+          "marginBottom": 153.94736842105263,
+          "marginTop": 39.473684210526315,
+        }
+      }
+    />
+  </View>
+</ImageBackground>
+`;
