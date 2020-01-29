@@ -2,21 +2,20 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { favoriteFlower, unfavoriteFlower } from 'src/store/actions/flowerActions';
 import { checkIfUserAuthenticated, getUpdatingItemId } from 'src/store/selectors';
-import { ActivityIndicator, FlatList, ImageBackground, RefreshControl, Text, View } from 'react-native';
-import { Error404, Loader, SearchBar } from 'src/components';
+import { FlatList, RefreshControl, View } from 'react-native';
+import { ListEmpty, ListFooterLoader } from 'src/components';
 import SearchResults from 'src/screens/Home/SearchResults';
-import FlowerListItem from 'src/screens/Home/FlowerListItem';
+import { FlowerListHeader, FlowerListItem } from 'src/screens/Home/FlowerList';
 import { ApiService } from 'src/services';
 import { flowerRequests } from 'src/services/api';
 import axios from 'axios';
 import { HookUtils, StringUtils } from 'src/utils';
 import { screenNames } from 'src/constants/navigation';
 import NavigationService from 'src/services/navigation';
-import { DEFAULT_ERROR } from 'src/constants/messages';
+import { DEFAULT_ERROR, NO_RESULTS } from 'src/constants/messages';
 import PropTypes from 'prop-types';
 import { flowerActionTypes } from 'src/constants/actionTypes';
 import { favoriteFlowerListPropTypes } from 'src/constants/propTypes';
-import homeBackground from 'src/assets/images/background/home-background.png';
 import styles from 'src/screens/Home/styles';
 
 const CancelToken = axios.CancelToken;
@@ -41,13 +40,13 @@ const Home = props => {
   const [flowerListPagination, setFlowerListPagination] = useState(initialPaginationState);
   const [error, setError] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
-  const [searchingFlatList, setSearchingFlatList] = useState(false);
+  const [flatListLoading, setFlatListLoading] = useState(false);
 
   HookUtils.useDidMount(() => fetchFlowers(flowerListPagination.currentPage));
 
   const fetchFlowers = async (page, refreshing = false) => {
     try {
-      refreshing ? setRefreshing(true) : setSearchingFlatList(true);
+      refreshing ? setRefreshing(true) : setFlatListLoading(true);
       const response = await ApiService.callApiAndCheckResponse(flowerRequests.getFlowers(page));
       const { flowers, meta } = response;
       const { pagination } = meta;
@@ -60,7 +59,7 @@ const Home = props => {
       console.log('fetchFlowers error', error);
       setError(true);
     } finally {
-      refreshing ? setRefreshing(false) : setSearchingFlatList(false);
+      refreshing ? setRefreshing(false) : setFlatListLoading(false);
     }
   };
 
@@ -94,7 +93,7 @@ const Home = props => {
       setSearchData({
         searchQuery: searchInput,
         searchResults: flowers,
-        message: flowers.length > 0 ? '' : 'No Results Found',
+        message: flowers.length > 0 ? '' : NO_RESULTS,
         showSearchResults: true
       });
     } catch (error) {
@@ -115,9 +114,12 @@ const Home = props => {
   const handleInput = value => {
     setSearchInput(value);
   };
+  const clearInput = () => {
+    setSearchInput('');
+  };
 
   const onEndReached = ({ distanceFromEnd }) => {
-    if (distanceFromEnd > 0 && !searchingFlatList && moreResultsAvailable && !searchInput) {
+    if (distanceFromEnd > 0 && !flatListLoading && moreResultsAvailable) {
       const page = flowerListPagination.currentPage + 1;
       setFlowerListPagination({
         currentPage: page,
@@ -163,22 +165,19 @@ const Home = props => {
     <View style={styles.container}>
       <FlatList
         ListHeaderComponent={
-          <ImageBackground source={homeBackground} style={styles.imageContainer}>
-            <Text style={styles.headerTitle}>Discover flowers around you</Text>
-            <Text style={styles.headerSubTitle}>Explore between more than 8.427 sightings</Text>
-            <View>
-              <SearchBar
-                searchInput={searchInput}
-                handleInput={handleInput}
-                clearInput={() => setSearchInput('')}
-                placeholder="Looking for something specific?"
-                viewStyle={styles.searchBarView}
-              />
-            </View>
-          </ImageBackground>
+          <FlowerListHeader
+            {...{
+              searchInput,
+              handleInput,
+              clearInput,
+              placeholder: 'Looking for something specific?',
+              headerTitle: 'Discover flowers around you',
+              headerSubtitle: 'Explore between more than 8.427 sightings'
+            }}
+          />
         }
-        ListFooterComponent={searchingFlatList && flowerList.length > 0 ? <ActivityIndicator size={'large'} /> : null}
-        ListEmptyComponent={error ? <Error404 /> : <Loader text={'Loading flower list'} />}
+        ListFooterComponent={<ListFooterLoader flatListLoading={flatListLoading} listLength={flowerList.length} />}
+        ListEmptyComponent={<ListEmpty error={error} text={'Loading flower list'} />}
         data={flowerList}
         renderItem={({ item, index }) => (
           <FlowerListItem
