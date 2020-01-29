@@ -4,9 +4,11 @@ const { rem } = dimensions;
 
 const styles = StyleSheet.create({
   leftButton: {
+    paddingRight: 30 * rem,
     marginLeft: 15 * rem
   },
   rightButton: {
+    paddingLeft: 30 * rem,
     marginRight: 15 * rem
   },
   menu: {
