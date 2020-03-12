@@ -8,7 +8,8 @@ const initialState = {
   popupMessage: {
     message: null,
     position: null
-  }
+  },
+  errors: []
 };
 
 const uiReducer = (state = initialState, { type, payload }) => {

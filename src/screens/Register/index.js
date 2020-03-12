@@ -9,7 +9,7 @@ import loginStyles from 'src/screens/Login/styles';
 import styles from 'src/screens/Register/styles';
 import { checkIfLoading } from 'src/store/selectors';
 import { userActionTypes } from 'src/constants/actionTypes';
-import { HookUtils } from 'src/utils';
+import { HooksUtils } from 'src/utils';
 import { popupMessagePropTypes } from 'src/constants/propTypes';
 import { REGISTRATION_SUCCESS } from 'src/constants/messages';
 
@@ -27,7 +27,7 @@ const Register = props => {
   const textInputRef3 = useRef(null);
   const textInputRef4 = useRef(null);
 
-  HookUtils.useDidUpdate(() => {
+  HooksUtils.useDidUpdate(() => {
     if (props.popupMessage.message === REGISTRATION_SUCCESS) {
       setRegisterForm(initialFormState);
     }

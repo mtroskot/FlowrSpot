@@ -4,16 +4,23 @@ import { Animated, TextInput, View } from 'react-native';
 import styles from 'src/components/FloatingLabelTextInput/styles';
 import StringUtils from 'src/utils/StringUtils';
 import { dimensions } from 'src/styles';
-import HookUtils from 'src/utils/HookUtils';
+import HooksUtils from 'src/utils/HooksUtils';
 
 const { rem } = dimensions;
 
-const FloatingLabelTextInput = props => {
+const FloatingLabelTextInput = ({
+  onSubmitEditing,
+  textInputRef,
+  floatingLabel,
+  value,
+  textInputStyle,
+  customContainerStyle,
+  ...restProps
+}) => {
   const [fadeAnim] = useState(new Animated.Value(0));
   const [focused, setFocused] = useState(false);
-  const { onSubmitEditing, textInputRef, floatingLabel, value, textInputStyle, customContainerStyle } = props;
 
-  HookUtils.useDidUpdate(() => {
+  HooksUtils.useDidUpdate(() => {
     if (StringUtils.isEmpty(value)) {
       Animated.timing(fadeAnim, {
         toValue: focused ? 1 : 0,
@@ -46,13 +53,14 @@ const FloatingLabelTextInput = props => {
           </Animated.Text>
         )}
         <TextInput
+          value={value}
           underlineColorAndroid="transparent"
           ref={textInputRef}
           onSubmitEditing={onSubmitEditing}
           style={[styles.defaultInput, textInputStyle]}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          {...props}
+          {...restProps}
         />
       </View>
     </View>

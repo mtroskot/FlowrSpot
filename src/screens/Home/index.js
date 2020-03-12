@@ -9,7 +9,7 @@ import { FlowerListHeader, FlowerListItem } from 'src/screens/Home/FlowerList';
 import { ApiService } from 'src/services';
 import { flowerRequests } from 'src/services/api';
 import axios from 'axios';
-import { HookUtils, StringUtils } from 'src/utils';
+import { HooksUtils, StringUtils } from 'src/utils';
 import { screenNames } from 'src/constants/navigation';
 import NavigationService from 'src/services/navigation';
 import { DEFAULT_ERROR, NO_RESULTS } from 'src/constants/messages';
@@ -42,7 +42,7 @@ const Home = props => {
   const [refreshing, setRefreshing] = useState(false);
   const [flatListLoading, setFlatListLoading] = useState(false);
 
-  HookUtils.useDidMount(() => fetchFlowers(flowerListPagination.currentPage));
+  HooksUtils.useDidMount(() => fetchFlowers(flowerListPagination.currentPage));
 
   const fetchFlowers = async (page, refreshing = false) => {
     try {

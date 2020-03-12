@@ -13,13 +13,12 @@ const defaultOptions = {
 };
 
 /**
- * Calls api and checks if response status is OK.
+ * Calls api and returns response data if status OK.
  * setTimeout needed for android to cancel request, if you don't have internet connection or the IP address or
  * domain name that you're requesting not there,in this case axios timeout will not work.
  * @param {string} url The api endpoint.
  * @param {object} options The request options.
- * @param {string} failMessage The message that will be thrown is response status is not OK.
- * @throws error if response status is not OK.
+ * @returns {Promise<AxiosResponse<any>>}
  */
 async function callApiAndCheckResponse({ url, options }) {
   let source = CancelToken.source();
@@ -32,13 +31,17 @@ async function callApiAndCheckResponse({ url, options }) {
 }
 
 /**
- * Calls api
+ * Calls api without checking the response and returns whole response
  * @param url The api endpoint
- * @param options
+ * @param options The request options.
  * @returns {Promise<AxiosResponse<any>>}
  */
 async function callApi({ url, options }) {
-  const fetchOptions = { ...defaultOptions, ...options };
+  let source = CancelToken.source();
+  setTimeout(() => {
+    source.cancel();
+  }, 6000);
+  const fetchOptions = { ...defaultOptions, ...options, ...{ validate: null } };
   const response = await axios(url, fetchOptions);
   return response;
 }

@@ -18,13 +18,8 @@ export const getUserAuthToken = store => store.user.authToken;
 export const checkIfUserAuthenticated = store => StringUtils.isNotEmpty(getUserAuthToken(store));
 
 export const getUpdatingItemId = (store, ...actionsToCheck) => {
-  let id = undefined;
-  for (let i = 0; i < store.ui.loader.actions.length; i++) {
-    const action = store.ui.loader.actions[i];
-    if (actionsToCheck.includes(action.name)) {
-      id = action.params?.id;
-      break;
-    }
-  }
-  return id;
+  const action = store.ui.loader.actions.find(
+    action => actionsToCheck.includes(action.name) && Number.isInteger(action.params?.id)
+  );
+  return action?.params.id;
 };

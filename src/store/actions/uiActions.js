@@ -8,10 +8,7 @@ export const startAction = (name, params) => {
   return {
     type: uiActionTypes.START_ACTION,
     payload: {
-      action: {
-        name,
-        params
-      }
+      action: { name, params }
     }
   };
 };
@@ -33,8 +30,5 @@ export const refreshActionStop = refreshAction => ({
 
 export const togglePopupMessage = (message, position) => ({
   type: uiActionTypes.TOGGLE_POPUP_MESSAGE,
-  payload: {
-    message,
-    position
-  }
+  payload: { message, position }
 });

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Animated, Text } from 'react-native';
-import { HookUtils, StringUtils } from 'src/utils';
+import { HooksUtils, StringUtils } from 'src/utils';
 import { popupMessagePropTypes } from 'src/constants/propTypes';
 import styles from 'src/components/PopupMessage/styles';
 
@@ -10,7 +10,7 @@ const PopupMessage = props => {
   const [popupAnimation] = useState(new Animated.Value(0));
   const { popupMessage } = props;
 
-  HookUtils.useDidUpdate(
+  HooksUtils.useDidUpdate(
     () => {
       Animated.timing(popupAnimation, {
         toValue: 1,
